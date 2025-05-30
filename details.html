@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pet Details - AasaanPets</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5" id="pet-detail"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const petId = params.get("petId");
+    const pets = {
+      1: { name: "Bruno the Lab", images: ["assets/images/dog1.jpg", "assets/images/dog1b.jpg"] },
+      2: { name: "Lucy the Beagle", images: ["assets/images/dog2.jpg"] }
+    };
+
+    const pet = pets[petId];
+    const container = document.getElementById("pet-detail");
+    if (pet) {
+      container.innerHTML = `
+        <h2>${pet.name}</h2>
+        <div class="row">
+          ${pet.images.map(img => `
+            <div class="col-md-4">
+              <img src="${img}" class="img-fluid mb-3" />
+            </div>`).join('')}
+        </div>
+        <a href="https://wa.me/917703983807?text=I%20want%20to%20adopt%20${encodeURIComponent(pet.name)}"
+           class="btn btn-success">
+          Adopt Now on WhatsApp
+        </a>
+      `;
+    } else {
+      container.innerHTML = "<p>Pet not found</p>";
+    }
+  </script>
+</body>
+</html>

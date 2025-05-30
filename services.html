@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawShala - Pet Paradise Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-color: #292f36;
+            --light-color: #f7fff7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            background-color: var(--light-color);
+        }
+
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2098&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 20px;
+            font-size: 1.1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff5252;
+            border-color: #ff5252;
+        }
+
+        .section-title {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 40px;
+            position: relative;
+            text-align: center;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .carousel-item img {
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 15px;
+        }
+
+        .service-img {
+            height: 350px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            display: none;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-popup {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            border: none;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0;
+        }
+
+        footer a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        footer .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .carousel-item img {
+                height: 300px;
+            }
+
+            .service-img {
+                height: 250px;
+            }
+
+            footer .col-md-4 {
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .carousel-caption h5 {
+                font-size: 1rem;
+            }
+
+            .carousel-caption p {
+                font-size: 0.8rem;
+            }
+
+            .service-img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">PawShala <span class="text-muted">Pet Paradise</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section class="hero-section">
+        <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&auto=format&fit=crop&w=1035&q=80" class="d-block w-100" alt="Pet Grooming">
+                    <div class="carousel-caption d-block">
+                        <h1 class="hero-title animate__animated animate__fadeInDown">Premium Pet <span class="text-warning">Grooming Services</span></h1>
+                        <p class="hero-subtitle animate__animated animate__fadeInUp">Pamper your pets with our top-notch grooming care</p>
+                        <a href="#grooming-services" class="btn btn-primary animate__animated animate__pulse">Explore Services</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=988&q=80" class="d-block w-100" alt="Pet Grooming">
+                    <div class="carousel-caption d-block">
+                        <h1 class="hero-title animate__animated animate__fadeInDown">Premium Pet <span class="text-warning">Grooming Services</span></h1>
+                        <p class="hero-subtitle animate__animated animate__fadeInUp">Pamper your pets with our top-notch grooming care</p>
+                        <a href="#grooming-services" class="btn btn-primary animate__animated animate__pulse">Explore Services</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1594149929911-78975a43d4f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Pet Grooming">
+                    <div class="carousel-caption d-block">
+                        <h1 class="hero-title animate__animated animate__fadeInDown">Premium Pet <span class="text-warning">Grooming Services</span></h1>
+                        <p class="hero-subtitle animate__animated animate__fadeInUp">Pamper your pets with our top-notch grooming care</p>
+                        <a href="#grooming-services" class="btn btn-primary animate__animated animate__pulse">Explore Services</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Grooming Services Section -->
+    <section id="grooming-services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Our Grooming Services</h2>
+            <p class="text-center mb-5">Discover our range of professional pet grooming services designed to keep your pets looking and feeling their best!</p>
+
+            <!-- Service 1: Full Grooming Package -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 order-md-1">
+                    <img src="https://images.unsplash.com/photo-1601758176119-1e6e6c0f9e0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Full Grooming Package" class="img-fluid service-img animate__animated animate__fadeInLeft">
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <h3 class="mt-3 mt-md-0">Full Grooming Package</h3>
+                    <p>Our comprehensive grooming package includes a bath, haircut, nail trimming, ear cleaning, and teeth brushing. Perfect for a complete makeover to keep your pet fresh and stylish.</p>
+                    <p><strong>Duration:</strong> 1.5-2 hours<br><strong>Price:</strong> Starts at $50<br><strong>Suitable for:</strong> All breeds</p>
+                    <a href="https://wa.me/917703983807?text=I'm%20interested%20in%20the%20Full%20Grooming%20Package" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
+                </div>
+            </div>
+
+            <!-- Service 2: Bath and Brush -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 order-md-2">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Bath and Brush" class="img-fluid service-img animate__animated animate__fadeInRight">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="mt-3 mt-md-0">Bath and Brush</h3>
+                    <p>A refreshing bath with premium pet-safe shampoo followed by a thorough brushing to remove loose fur and prevent matting. Leaves your pet’s coat shiny and smooth.</p>
+                    <p><strong>Duration:</strong> 45 minutes<br><strong>Price:</strong> Starts at $30<br><strong>Suitable for:</strong> Short and long-haired breeds</p>
+                    <a href="https://wa.me/917703983807?text=I'm%20interested%20in%20the%20Bath%20and%20Brush%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
+                </div>
+            </div>
+
+            <!-- Service 3: Nail Trimming -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 order-md-1">
+                    <img src="https://images.unsplash.com/photo-1611003229186-80e40cd54966?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Nail Trimming" class="img-fluid service-img animate__animated animate__fadeInLeft">
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <h3 class="mt-3 mt-md-0">Nail Trimming</h3>
+                    <p>Safe and gentle nail trimming to keep your pet’s paws healthy and comfortable. Our groomers ensure a stress-free experience for your pet.</p>
+                    <p><strong>Duration:</strong> 15-20 minutes<br><strong>Price:</strong> Starts at $15<br><strong>Suitable for:</strong> All pets</p>
+                    <a href="https://wa.me/917703983807?text=I'm%20interested%20in%20the%20Nail%20Trimming%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
+                </div>
+            </div>
+
+            <!-- Service 4: Ear Cleaning -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 order-md-2">
+                    <img src="https://images.unsplash.com/photo-1598875706250-21d087ce11d0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Ear Cleaning" class="img-fluid service-img animate__animated animate__fadeInRight">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="mt-3 mt-md-0">Ear Cleaning</h3>
+                    <p>Gentle cleaning to remove dirt and wax buildup from your pet’s ears, reducing the risk of infections and ensuring their comfort.</p>
+                    <p><strong>Duration:</strong> 15 minutes<br><strong>Price:</strong> Starts at $10<br><strong>Suitable for:</strong> All pets, especially floppy-eared breeds</p>
+                    <a href="https://wa.me/917703983807?text=I'm%20interested%20in%20the%20Ear%20Cleaning%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
+                </div>
+            </div>
+
+            <!-- Service 5: Teeth Brushing -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 order-md-1">
+                    <img src="https://images.unsplash.com/photo-1601758177266-6ff1b5b40a46?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Teeth Brushing" class="img-fluid service-img animate__animated animate__fadeInLeft">
+                </div>
+                <div class="col-md-6 order-md-2">
+                    <h3 class="mt-3 mt-md-0">Teeth Brushing</h3>
+                    <p>Keep your pet’s dental health in check with our professional teeth brushing service, using pet-safe toothpaste to freshen breath and reduce plaque.</p>
+                    <p><strong>Duration:</strong> 15 minutes<br><strong>Price:</strong> Starts at $12<br><strong>Suitable for:</strong> All pets</p>
+                    <a href="https://wa.me/917703983807?text=I'm%20interested%20in%20the%20Teeth%20Brushing%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
+                </div>
+            </div>
+
+            <!-- Service 6: De-Shedding Treatment -->
+            <div class="row align-items-center mb-5">
+                <div class="col-md-6 order-md-2">
+                    <img src="https://images.unsplash.com/photo-1605281312798-23b1f2a1f884?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="De-Shedding Treatment" class="img-fluid service-img animate__animated animate__fadeInRight">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <h3 class="mt-3 mt-md-0">De-Shedding Treatment</h3>
+                    <p>Specialized brushing and grooming techniques to reduce shedding and keep your home fur-free. Ideal for breeds with heavy undercoats.</p>
+                    <p><strong>Duration:</strong> 1 hour<br><strong>Price:</strong> Starts at $40<br><strong>Suitable for:</strong> Breeds with thick coats</p>
+                    <a href="https://wa.me/917703983807?text=I'm%20interested%20in%20the%20De-Shedding%20Treatment" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>PawShala - Pet Paradise</h3>
+                    <p>Bringing joy to families through pet adoption and care since 2020.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/917703983807"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#services">Dog Adoption</a></li>
+                        <li><a href="#services">Grooming</a></li>
+                        <li><a href="#services">Pet Food</a></li>
+                        <li><a href="#services">Training</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">© 2025 PawShala - Pet Paradise. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content animate__animated animate__bounceIn">
+            <span class="close-popup" id="closePopup">×</span>
+            <h3>Interested in Our Grooming Services?</h3>
+            <p>Call us now or send a message on WhatsApp to book a grooming session for your pet!</p>
+            <div class="d-flex justify-content-center mt-4">
+                <a href="tel:+917703983807" class="btn btn-primary me-3"><i class="fas fa-phone me-2"></i> Call Now</a>
+                <a href="https://wa.me/917703983807" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Popup functionality
+        function showPopup() {
+            document.getElementById('popupOverlay').style.display = 'flex';
+        }
+
+        // Show popup initially after 10 seconds
+        setTimeout(showPopup, 10000);
+
+        // Show popup every 10 seconds after closing
+        let popupInterval;
+        function startPopupInterval() {
+            popupInterval = setInterval(showPopup, 10000);
+        }
+
+        // Close popup and restart interval
+        document.getElementById('closePopup').addEventListener('click', function() {
+            document.getElementById('popupOverlay').style.display = 'none';
+            clearInterval(popupInterval);
+            startPopupInterval();
+        });
+
+        // Start the interval initially
+        startPopupInterval();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
