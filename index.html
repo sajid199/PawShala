@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawShala - Pet Paradise</title>
+    <title>PuppyAdda - Pet Paradise</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -190,6 +190,24 @@
             margin: 0 10px;
         }
 
+        /* Video link styles */
+        .play-video-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .play-video-link:hover {
+            color: #ff5252;
+            text-decoration: underline;
+        }
+
+        #videoContainer {
+            display: none;
+            margin-top: 20px;
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.2rem;
@@ -235,7 +253,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">PawShala <span class="text-muted">Pet Paradise</span></a>
+            <a class="navbar-brand" href="#">PuppyAdda <span class="text-muted">Pet Paradise</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -323,7 +341,7 @@
                 </div>
                 <div class="col-md-6">
                     <h3 class="mt-3 mt-md-0">Who We Are</h3>
-                    <p>PawShala, started in 2020, is dedicated to finding loving homes for rescued dogs. Our team of passionate animal lovers provides care, rehabilitation, and a second chance for these furry friends.</p>
+                    <p>PuppyAdda, started in 2020, is dedicated to finding loving homes for rescued dogs. Our team of passionate animal lovers provides care, rehabilitation, and a second chance for these furry friends.</p>
                     <p>We believe every dog deserves a family, and every family deserves a dog's unconditional love. Our adoption process ensures the perfect match for lifelong happiness.</p>
                     <div class="d-flex justify-content-around mt-4 text-center">
                         <div>
@@ -346,42 +364,70 @@
             <h2 class="section-title">Meet Our Puppies</h2>
             <p class="text-center mb-5">Click on a puppy to learn more about adoption!</p>
             <div class="row">
-                <div class="col-md-4 col-sm-6">
+                <!-- Labrador Retriever -->
+                <div class="col-md-4 col-sm-6 mb-4">
                     <div class="card dog-card" data-bs-toggle="modal" data-bs-target="#dogModal" data-dog="1">
-                        <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&auto=format&fit=crop&w=1035&q=80" class="card-img-top" alt="Buddy">
+                        <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80" class="card-img-top" alt="Cooper">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Buddy</h5>
-                            <p class="card-text">Golden Retriever • 3 months</p>
+                            <h5 class="card-title">Cooper</h5>
+                            <p class="card-text">Labrador Retriever • 3 months</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                
+                <!-- German Shepherd -->
+                <div class="col-md-4 col-sm-6 mb-4">
                     <div class="card dog-card" data-bs-toggle="modal" data-bs-target="#dogModal" data-dog="2">
-                        <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=988&q=80" class="card-img-top" alt="Charlie">
+                        <img src="https://images.unsplash.com/photo-1589941013455-a58137aef2d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1035&q=80" class="card-img-top" alt="Rex">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Charlie</h5>
-                            <p class="card-text">Labrador • 4 months</p>
+                            <h5 class="card-title">Rex</h5>
+                            <p class="card-text">German Shepherd • 4 months</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6">
+                
+                <!-- Pomeranian -->
+                <div class="col-md-4 col-sm-6 mb-4">
                     <div class="card dog-card" data-bs-toggle="modal" data-bs-target="#dogModal" data-dog="3">
-                        <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1049&q=80" class="card-img-top" alt="Max">
+                        <img src="https://images.unsplash.com/photo-1594149929911-78975a43d4f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="card-img-top" alt="Fluffy">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Max</h5>
-                            <p class="card-text">Beagle • 2 months</p>
+                            <h5 class="card-title">Fluffy</h5>
+                            <p class="card-text">Pomeranian • 2 months</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Siberian Husky -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card dog-card" data-bs-toggle="modal" data-bs-target="#dogModal" data-dog="4">
+                        <img src="https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80" class="card-img-top" alt="Luna">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Luna</h5>
+                            <p class="card-text">Siberian Husky • 3 months</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shih Tzu -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card dog-card" data-bs-toggle="modal" data-bs-target="#dogModal" data-dog="5">
+                        <img src="https://images.unsplash.com/photo-1626231573919-4b326f0b6e0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80" class="card-img-top" alt="Milo">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Milo</h5>
+                            <p class="card-text">Shih Tzu • 2.5 months</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h3>PawShala - Pet Paradise</h3>
+                    <h3>PuppyAdda - Pet Paradise</h3>
                     <p>Bringing joy to families through pet adoption and care since 2020.</p>
                     <div class="social-icons mt-3">
                         <a href="#"><i class="fab fa-facebook"></i></a>
@@ -412,7 +458,7 @@
             </div>
             <hr class="mt-4 bg-light">
             <div class="text-center">
-                <p class="mb-0">© 2025 PawShala - Pet Paradise. All rights reserved.</p>
+                <p class="mb-0">© 2025 PuppyAdda - Pet Paradise. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -448,6 +494,12 @@
                             <p><strong>Gender:</strong> <span id="dogGender"></span></p>
                             <p><strong>Size:</strong> <span id="dogSize"></span></p>
                             <p><strong>Vaccinated:</strong> <span id="dogVaccinated"></span></p>
+                            <p><strong>Video Link:</strong> <span id="videoLink"></span></p>
+                            <div id="videoContainer">
+                                <div class="ratio ratio-16x9">
+                                    <iframe id="dogVideo" src="" allowfullscreen></iframe>
+                                </div>
+                            </div>
                             <div class="mt-3">
                                 <h5>About Me</h5>
                                 <p id="dogDescription"></p>
@@ -482,44 +534,74 @@
         // Dog data
         const dogs = {
             1: {
-                name: "Buddy",
-                breed: "Golden Retriever",
+                name: "Cooper",
+                breed: "Labrador Retriever",
                 age: "3 months",
                 gender: "Male",
-                size: "Medium (will grow to 22-24 inches)",
+                size: "Large (22-24 inches when grown)",
                 vaccinated: "Yes",
-                description: "Buddy is a playful and affectionate golden retriever puppy who loves to cuddle and play fetch. He's great with kids and other pets, and is already showing signs of being a quick learner in his basic training sessions.",
+                videoLink: "https://www.youtube.com/embed/IJL0R_lENgc",
+                description: "Friendly, outgoing, and perfect for families. Labs love swimming, fetch, and have a gentle temperament. Highly trainable and great with kids.",
                 images: [
-                    "https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&auto=format&fit=crop&w=1035&q=80",
                     "https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-                    "https://images.unsplash.com/photo-1633722715463-d30f4f325e24?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80"
+                    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80",
+                    "https://images.unsplash.com/photo-1591769225440-811ad7d6eab2?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80"
                 ]
             },
             2: {
-                name: "Charlie",
-                breed: "Labrador Retriever",
+                name: "Rex",
+                breed: "German Shepherd",
                 age: "4 months",
                 gender: "Male",
-                size: "Large (will grow to 22-24 inches)",
+                size: "Large (24-26 inches when grown)",
                 vaccinated: "Yes",
-                description: "Charlie is an energetic and friendly labrador who loves water and outdoor activities. He's very food-motivated which makes training easy, and he gets along with everyone he meets.",
+                description: "Intelligent, loyal, and protective. Excels in obedience training. Needs mental stimulation and consistent socialization.",
                 images: [
-                    "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=988&q=80",
-                    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80",
-                    "https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1074&q=80"
+                    "https://images.unsplash.com/photo-1589941013455-a58137aef2d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1035&q=80",
+                    "https://images.unsplash.com/photo-1615751072497-5f5169febe17?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80",
+                    "https://images.unsplash.com/photo-1591769225440-811ad7d6eab2?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80"
                 ]
             },
             3: {
-                name: "Max",
-                breed: "Beagle",
+                name: "Fluffy",
+                breed: "Pomeranian",
                 age: "2 months",
-                gender: "Male",
-                size: "Small (will grow to 13-15 inches)",
+                gender: "Female",
+                size: "Small (6-7 inches when grown)",
                 vaccinated: "First round completed",
-                description: "Max is a curious and merry little beagle with the cutest howl. He loves following scents and exploring, but is equally happy curling up in your lap for a nap. Great for families or singles in apartments.",
+                description: "Fluffy, bold, and full of personality. Loves attention and adapts well to apartments. Requires frequent grooming.",
                 images: [
-                    "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1049&q=80",
                     "https://images.unsplash.com/photo-1594149929911-78975a43d4f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+                    "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80",
+                    "https://images.unsplash.com/photo-1633722715463-d30f4f325e24?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80"
+                ]
+            },
+            4: {
+                name: "Luna",
+                breed: "Siberian Husky",
+                age: "3 months",
+                gender: "Female",
+                size: "Medium-Large (20-24 inches when grown)",
+                vaccinated: "Yes",
+                videoLink: "https://www.youtube.com/embed/u4m-EPPXqM0",
+                description: "Energetic, mischievous, and vocal. Needs ample exercise and secure fencing (escape artists!). Striking blue eyes.",
+                images: [
+                    "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80",
+                    "https://images.unsplash.com/photo-1517423447168-cb8045b562f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80",
+                    "https://images.unsplash.com/photo-1626231573919-4b326f0b6e0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80"
+                ]
+            },
+            5: {
+                name: "Milo",
+                breed: "Shih Tzu",
+                age: "2.5 months",
+                gender: "Male",
+                size: "Small (9-10 inches when grown)",
+                vaccinated: "First round completed",
+                description: "Affectionate lap dog with a sweet temperament. Thrives in calm environments. Long coat needs daily brushing.",
+                images: [
+                    "https://images.unsplash.com/photo-1626231573919-4b326f0b6e0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80",
+                    "https://images.unsplash.com/photo-1633722715463-d30f4f325e24?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80",
                     "https://images.unsplash.com/photo-1591769225440-811ad7d6eab2?ixlib=rb-4.0.3&auto=format&fit=crop&w=987&q=80"
                 ]
             }
@@ -542,6 +624,21 @@
                 document.getElementById('dogVaccinated').textContent = dog.vaccinated;
                 document.getElementById('dogDescription').textContent = dog.description;
                 
+                // Handle video link
+                const videoLinkElement = document.getElementById('videoLink');
+                const videoContainer = document.getElementById('videoContainer');
+                const videoIframe = document.getElementById('dogVideo');
+                
+                if (dog.videoLink) {
+                    videoLinkElement.innerHTML = `<a href="#" class="play-video-link" data-video="${dog.videoLink}">Watch Video</a>`;
+                } else {
+                    videoLinkElement.textContent = "No video available";
+                }
+                
+                // Reset video container
+                videoContainer.style.display = 'none';
+                videoIframe.src = '';
+                
                 const mainImage = document.getElementById('dogModalImage');
                 mainImage.src = dog.images[0];
                 
@@ -550,7 +647,7 @@
                 document.getElementById('dogImage3').src = dog.images[2];
                 
                 const whatsappBtn = document.getElementById('whatsappBtn');
-                const message = `Hi PawShala, I'm interested in adopting ${dog.name} (${dog.breed}). Can you please share more details?`;
+                const message = `Hi PuppyAdda, I'm interested in adopting ${dog.name} (${dog.breed}). Can you please share more details?`;
                 const encodedMessage = encodeURIComponent(message);
                 whatsappBtn.href = `https://wa.me/917703983807?text=${encodedMessage}`;
             });
@@ -561,6 +658,22 @@
             thumbnail.addEventListener('click', function() {
                 document.getElementById('dogModalImage').src = this.src;
             });
+        });
+
+        // Handle video link click
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('play-video-link')) {
+                e.preventDefault();
+                const videoUrl = e.target.getAttribute('data-video');
+                const videoContainer = document.getElementById('videoContainer');
+                const videoIframe = document.getElementById('dogVideo');
+                
+                videoIframe.src = videoUrl;
+                videoContainer.style.display = 'block';
+                
+                // Scroll to the video
+                videoContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
         });
 
         // Popup functionality
