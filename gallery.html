@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PuppyAdda - Pet Paradise Gallery</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/Logo/pupy_adda_logo-removebg-preview2.ico">
+    <!-- Google Fonts for Cursive Tagline -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -33,6 +35,9 @@
         .navbar-brand {
             font-weight: 700;
             color: var(--primary-color) !important;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-link {
@@ -43,6 +48,21 @@
 
         .nav-link:hover {
             color: var(--primary-color);
+        }
+
+        .logo {
+            width: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .tagline {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--dark-color);
+            margin-left: 5px;
+            letter-spacing: 1px;
         }
 
         .hero-section {
@@ -205,26 +225,8 @@
             width: 100%;
             height: 100%;
         }
-                
-        
-            .navbar-brand .text-muted {
-                display: none; /* Hide "Pet Paradise" on very small screens */
-            }
-            
-            .navbar-brand .logo {
-                width: 35px;
-                margin-right: 5px;
-            }
-             /* Navbar brand adjustments for medium screens */Add commentMore actions
-            .navbar-brand {
-                white-space: nowrap;
-            }
-            
-            .navbar-brand .logo {
-                width: 40px;
-                margin-right: 8px;
-            }
-        
+
+        /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.2rem;
@@ -245,6 +247,22 @@
             footer .col-md-4 {
                 margin-bottom: 30px;
             }
+
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+
+            .navbar-brand .logo {
+                width: 40px;
+                margin-right: 8px;
+            }
+
+            .tagline {
+                font-size: 1rem;
+                margin-left: 5px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -263,6 +281,22 @@
             .carousel-caption p {
                 font-size: 0.8rem;
             }
+
+            .navbar-brand {
+                display: flex;
+                align-items: center;
+                flex-wrap: nowrap;
+            }
+
+            .navbar-brand .logo {
+                width: 35px;
+                margin-right: 5px;
+            }
+
+            .tagline {
+                font-size: 0.9rem;
+                margin-left: 3px;
+            }
         }
     </style>
 </head>
@@ -270,7 +304,10 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img class="logo" src="./assets/images/Logo/pupy_adda_logo.png" alt="">PuppyAdda <span class="text-muted">Pet Paradise</span></a>
+            <a class="navbar-brand" href="index.html">
+                <img class="logo" src="./assets/images/Logo/pupy_adda_logo.png" alt="PuppyAdda Logo">
+                PuppyAdda <span class="tagline">Pet Paradise</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
