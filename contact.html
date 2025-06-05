@@ -147,11 +147,26 @@
             font-size: 1.5rem;
             margin: 0 10px;
         }
-            .logo {
-            width: 50px;
-            height: auto;
-            margin-right: 10px;
-        }
+           
+        
+            .navbar-brand .text-muted {
+                display: none; /* Hide "Pet Paradise" on very small screens */
+            }
+            
+            .navbar-brand .logo {
+                width: 35px;
+                margin-right: 5px;
+            }
+             /* Navbar brand adjustments for medium screens */Add commentMore actions
+            .navbar-brand {
+                white-space: nowrap;
+            }
+            
+            .navbar-brand .logo {
+                width: 40px;
+                margin-right: 8px;
+            }
+        
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.2rem;
