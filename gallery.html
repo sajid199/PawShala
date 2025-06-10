@@ -168,6 +168,21 @@
             max-width: 500px;
             width: 90%;
             position: relative;
+            animation: zoomIn 0.5s ease;
+        }
+
+        .popup-content img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .popup-content img:hover {
+            transform: scale(1.05);
         }
 
         .close-popup {
@@ -226,7 +241,6 @@
             height: 100%;
         }
 
-        /* New Gallery Styles */
         .breed-section {
             margin-bottom: 50px;
             padding: 20px;
@@ -303,7 +317,43 @@
             border-radius: 10px;
         }
 
-        /* Responsive adjustments */
+        .full-image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .full-image-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            animation: zoomIn 0.5s ease;
+        }
+
+        .full-image-content img {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-full-image {
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.2rem;
@@ -343,6 +393,10 @@
 
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .popup-content img {
+                height: 200px;
             }
         }
 
@@ -385,6 +439,10 @@
 
             .gallery-item {
                 height: 180px;
+            }
+
+            .popup-content img {
+                height: 150px;
             }
         }
     </style>
@@ -465,520 +523,539 @@
         </div>
     </section>
 
-    <!-- Dog Categories Section -->
-    <section id="dog-categories" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="section-title">Dog Categories</h2>
-        <p class="text-center mb-5">Browse through our adorable dog breeds and their pictures</p>
-        
-        <!-- Golden Retrievers Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Golden Retrievers</h3>
-                <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Golden%20Retrievers" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Golden retriever/Golden retriever (4).jpeg" alt="Golden Retriever">
-                    <div class="breed-description">
-                        <p>Energetic and playful</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Golden retriever/Golden retriever (2).jpeg" alt="Golden Retriever">
-                    <div class="breed-description">
-                        <p>Loves to play fetch</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Golden retriever/Golden retriever (3).jpeg" alt="Golden Retriever">
-                    <div class="breed-description">
-                        <p>Great with children</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Golden retriever/Golden retriever (4).jpeg" alt="Golden Retriever">
-                    <div class="breed-description">
-                        <p>Friendly family dog</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Energetic, goofy, and full of love. Excellent family dog that gets along with everyone. Loves playing fetch and swimming. That golden coat will turn heads!</p>
-                <p><strong>Characteristics:</strong> Loyal, gentle, trainable</p>
-                <p><strong>Ideal For:</strong> Families, active individuals</p>
-            </div>
-        </div>
-        
-        <!-- Labrador Retrievers Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Labrador Retrievers</h3>
-                <a href="./assets/images/Labrador/Labrador (1).jpeg" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Labdour.jpg" alt="Labrador Retriever">
-                    <div class="breed-description">
-                        <p>Outgoing and friendly</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Labrador.jpg" alt="Labrador Retriever">
-                    <div class="breed-description">
-                        <p>Loves water activities</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Labrador/Labrador (1).jpeg" alt="Labrador Retriever">
-                    <div class="breed-description">
-                        <p>Excellent family pet</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Labdour.jpg" alt="Labrador Retriever">
-                    <div class="breed-description">
-                        <p>Highly trainable</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Friendly, charismatic, and great with families. Loves swimming and fetch. Highly trainable with a gentle temperament that wins everyone's heart.</p>
-                <p><strong>Characteristics:</strong> Energetic, friendly, intelligent</p>
-                <p><strong>Ideal For:</strong> Families, outdoor enthusiasts</p>
-            </div>
-        </div>
-
-        <!-- Siberian Huskies Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Siberian Huskies</h3>
-                <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Siberian%20Huskies" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Husky/Husky (2).jpeg" alt="Siberian Husky">
-                    <div class="breed-description">
-                        <p>Striking blue eyes</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Husky/Husky (1).jpeg" alt="Siberian Husky">
-                    <div class="breed-description">
-                        <p>High energy</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Husky/Husky (3).jpeg" alt="Siberian Husky">
-                    <div class="breed-description">
-                        <p>Affectionate nature</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Husky/Husky (4).jpeg" alt="Siberian Husky">
-                    <div class="breed-description">
-                        <p>Needs ample exercise</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Stunning beauty with striking blue eyes. High energy and vocal - needs ample exercise. Independent spirit but affectionate. Secure fencing is a must!</p>
-                <p><strong>Characteristics:</strong> Energetic, striking, loyal</p>
-                <p><strong>Ideal For:</strong> Active families, cold climates</p>
-            </div>
-        </div>
-        
-        <!-- Toy Poodles Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Toy Poodles</h3>
-                <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Toy%20Poodles" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Toy Poodle/ToyPoodle (1).jpg" alt="Toy Poodle">
-                    <div class="breed-description">
-                        <p>Intelligent and elegant</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Toy Poodle/ToyPoodle (2).jpg" alt="Toy Poodle">
-                    <div class="breed-description">
-                        <p>Hypoallergenic coat</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Toy Poodle/ToyPoodle (3).jpg" alt="Toy Poodle">
-                    <div class="breed-description">
-                        <p>Surprisingly athletic</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Toy Poodle/ToyPoodle (1).jpg" alt="Toy Poodle">
-                    <div class="breed-description">
-                        <p>Full of attitude</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Intelligent, elegant, and full of attitude. Hypoallergenic coat that needs professional grooming. Surprisingly athletic despite petite size.</p>
-                <p><strong>Characteristics:</strong> Intelligent, hypoallergenic, elegant</p>
-                <p><strong>Ideal For:</strong> Allergy sufferers, families</p>
-            </div>
-        </div>
-        
-        <!-- German Shepherds Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">German Shepherds</h3>
-                <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20German%20Shepherds" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/German Sephard.jpg" alt="German Shepherd">
-                    <div class="breed-description">
-                        <p>Loyal and intelligent</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/German Shepard/German Shepard (2).jpeg" alt="German Shepherd">
-                    <div class="breed-description">
-                        <p>Excellent guard dog</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/German Shepard/German Shepard (3).jpeg" alt="German Shepherd">
-                    <div class="breed-description">
-                        <p>Needs mental stimulation</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/German Sephard.jpg" alt="German Shepherd">
-                    <div class="breed-description">
-                        <p>Forms strong bonds</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Graceful yet powerful. Extremely intelligent and loyal. Excellent guard dog that needs mental stimulation and consistent training. Perfect for active owners.</p>
-                <p><strong>Characteristics:</strong> Loyal, protective, intelligent</p>
-                <p><strong>Ideal For:</strong> Families, security roles</p>
-            </div>
-        </div>
-        
-        <!-- Pomeranian Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Pomeranians</h3>
-                <a href="./assets/images/Pomeranin Puppy.jpg" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Pomeranin Puppy.jpg" alt="Pomeranian">
-                    <div class="breed-description">
-                        <p>Lively and affectionate</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/PomeranianPuppies/Pomeranian (2).jpeg" alt="Pomeranian">
-                    <div class="breed-description">
-                        <p>Big personality</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/PomeranianPuppies/Pomeranian (3).jpeg" alt="Pomeranian">
-                    <div class="breed-description">
-                        <p>Needs regular grooming</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Pomeranin Puppy.jpg" alt="Pomeranian">
-                    <div class="breed-description">
-                        <p>Perfect for apartments</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Small package with big personality! Lively and affectionate. Perfect for apartments but needs regular grooming. Loves being the center of attention.</p>
-                <p><strong>Characteristics:</strong> Lively, affectionate, bold</p>
-                <p><strong>Ideal For:</strong> Apartment dwellers, families</p>
-            </div>
-        </div>
-        
-        <!-- Shih Tzu Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Shih Tzus</h3>
-                <a href="./assets/images/Shizu.jpg" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Shizu.jpg" alt="Shih Tzu">
-                    <div class="breed-description">
-                        <p>Elegant and sweet</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Shihtzu/shihtzu (1).png" alt="Shih Tzu">
-                    <div class="breed-description">
-                        <p>Loves cuddles</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Shihtzu/shihtzu (2).png" alt="Shih Tzu">
-                    <div class="breed-description">
-                        <p>Needs daily brushing</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Shihtzu/shihtzu (4).png" alt="Shih Tzu">
-                    <div class="breed-description">
-                        <p>Calm companion</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Elegant and sweet-natured companion. Thrives in calm environments and loves cuddles. Long luxurious coat requires daily brushing - perfect for those who love pampering their pets.</p>
-                <p><strong>Characteristics:</strong> Affectionate, elegant, calm</p>
-                <p><strong>Ideal For:</strong> Calm households, pet pamperers</p>
-            </div>
-        </div>
-        
-        <!-- Rottweiler Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Rottweilers</h3>
-                <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Rottweilers" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Rottweiler dog/dog-4372036_1280.jpg" alt="Rottweiler">
-                    <div class="breed-description">
-                        <p>Powerful presence</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Rottweiler dog/dog-6945696_1280.jpg" alt="Rottweiler">
-                    <div class="breed-description">
-                        <p>Gentle with family</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Rottweiler dog/Rottweiler dog (1).jpeg" alt="Rottweiler">
-                    <div class="breed-description">
-                        <p>Protective nature</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Rottweiler dog/dog-4372036_1280.jpg" alt="Rottweiler">
-                    <div class="breed-description">
-                        <p>Needs strong leadership</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Powerful presence with a heart of gold. Needs strong leadership and socialization. Surprisingly gentle with family. Protective nature makes an excellent guard dog.</p>
-                <p><strong>Characteristics:</strong> Protective, gentle, loyal</p>
-                <p><strong>Ideal For:</strong> Families, security roles</p>
-            </div>
-        </div>
-        
-        <!-- Great Dane Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Great Danes</h3>
-                <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Great%20Danes" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Greate dane/Greate dane (1).jpeg" alt="Great Dane">
-                    <div class="breed-description">
-                        <p>Gentle giant</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Greate dane/Greate dane (2).jpeg" alt="Great Dane">
-                    <div class="breed-description">
-                        <p>Graceful despite size</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Greate dane/Greate dane (3).jpeg" alt="Great Dane">
-                    <div class="breed-description">
-                        <p>Needs ample space</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Greate dane/Greate dane (1).jpeg" alt="Great Dane">
-                    <div class="breed-description">
-                        <p>Loves to cuddle</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Tall, handsome, and graceful despite massive size. Gentle giant who thinks he's a lap dog. Needs space to stretch those long legs!</p>
-                <p><strong>Characteristics:</strong> Gentle, graceful, affectionate</p>
-                <p><strong>Ideal For:</strong> Families with space, calm households</p>
-            </div>
-        </div>
-        
-        <!-- St. Bernard Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">St. Bernards</h3>
-                <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20St.%20Bernards" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/St Bernad dog/St Bernad dog (2).jpeg" alt="St. Bernard">
-                    <div class="breed-description">
-                        <p>Calm and patient</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/St Bernad dog/St Bernad dog (1).jpeg" alt="St. Bernard">
-                    <div class="breed-description">
-                        <p>Incredible strength</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/St Bernad dog/St Bernad dog (2).jpeg" alt="St. Bernard">
-                    <div class="breed-description">
-                        <p>Deep commanding bark</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/St Bernad dog/St Bernad dog (2).jpeg" alt="St. Bernard">
-                    <div class="breed-description">
-                        <p>Noble rescue dog</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Calm, patient, and noble. Famous rescue dog with incredible strength. That deep bark commands respect! Drools more than he acts though.</p>
-                <p><strong>Characteristics:</strong> Calm, strong, noble</p>
-                <p><strong>Ideal For:</strong> Families with space, calm households</p>
-            </div>
-        </div>
-        
-        <!-- Doberman Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Dobermans</h3>
-                <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Dobermans" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.28.01 AM (1).jpeg" alt="Doberman">
-                    <div class="breed-description">
-                        <p>Sleek and athletic</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.28.01 AM.jpeg" alt="Doberman">
-                    <div class="breed-description">
-                        <p>Intensely loyal</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.27.56 AM.jpeg" alt="Doberman">
-                    <div class="breed-description">
-                        <p>Fierce protector</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.28.01 AM (1).jpeg" alt="Doberman">
-                    <div class="breed-description">
-                        <p>Low maintenance coat</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Sleek, athletic, and intensely loyal. Fierce protector with family but sweetheart at home. Needs vigorous exercise and mental challenges. That sleek coat is low maintenance!</p>
-                <p><strong>Characteristics:</strong> Loyal, protective, athletic</p>
-                <p><strong>Ideal For:</strong> Active owners, security roles</p>
-            </div>
-        </div>
-        
-        <!-- French Bulldog Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">French Bulldogs</h3>
-                <a href="./assets/images/French Bulldog/bulldog (2).jpeg" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/French Bulldog/bulldog (2).jpeg" alt="French Bulldog">
-                    <div class="breed-description">
-                        <p>Charming bat-eared</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/French Bulldog/bulldog (1).jpeg" alt="French Bulldog">
-                    <div class="breed-description">
-                        <p>Big personality</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/French Bulldog/bulldog (3).jpeg" alt="French Bulldog">
-                    <div class="breed-description">
-                        <p>Adorable snorts</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/French Bulldog/bulldog (2).jpeg" alt="French Bulldog">
-                    <div class="breed-description">
-                        <p>Great for city living</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Charming, bat-eared beauty with a big personality. Adapts well to city living. Not much of a barker but snorts and snores adorably. Those big eyes will melt your heart!</p>
-                <p><strong>Characteristics:</strong> Charming, affectionate, calm</p>
-                <p><strong>Ideal For:</strong> City dwellers, families</p>
-            </div>
-        </div>
-        
-        <!-- Maltese Section -->
-        <div class="breed-section">
-            <div class="breed-header">
-                <h3 class="breed-title">Maltese</h3>
-                <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Maltese" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="./assets/images/Maltese/Maltese (3).jpeg" alt="Maltese">
-                    <div class="breed-description">
-                        <p>Petite and glamorous</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Maltese/Maltese (1).jpeg" alt="Maltese">
-                    <div class="breed-description">
-                        <p>Silky white coat</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Maltese/Maltese (2).jpeg" alt="Maltese">
-                    <div class="breed-description">
-                        <p>Hypoallergenic</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="./assets/images/Maltese/Maltese (3).jpeg" alt="Maltese">
-                    <div class="breed-description">
-                        <p>Playful and affectionate</p>
-                    </div>
-                </div>
-            </div>
-            <div class="breed-info">
-                <p><strong>Description:</strong> Petite glamour girl with a silky white coat. Loves being pampered and carried around. Surprisingly playful and affectionate. Hypoallergenic and perfect for apartments.</p>
-                <p><strong>Characteristics:</strong> Affectionate, hypoallergenic, playful</p>
-                <p><strong>Ideal For:</strong> Apartment dwellers, allergy sufferers</p>
-            </div>
+    <!-- Adoption Popup -->
+    <div class="popup-overlay" id="adoptionPopup">
+        <div class="popup-content animate__animated animate__zoomIn">
+            <span class="close-popup" onclick="closeAdoptionPopup()">&times;</span>
+            <img src="" alt="Puppy" id="popupPuppyImage">
+            <h3>Please Adopt Me!</h3>
+            <p id="popupMessage"></p>
+            <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20adopting%20a%20puppy" class="btn whatsapp-btn">Adopt Now</a>
         </div>
     </div>
-</section>
+
+    <!-- Full Image Viewer -->
+    <div class="full-image-overlay" id="fullImageOverlay">
+        <div class="full-image-content">
+            <span class="close-full-image" onclick="closeFullImage()">&times;</span>
+            <img src="" alt="Full Puppy Image" id="fullPuppyImage">
+        </div>
+    </div>
+
+    <!-- Dog Categories Section -->
+    <section id="dog-categories" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Dog Categories</h2>
+            <p class="text-center mb-5">Browse through our adorable dog breeds and their pictures</p>
+            
+            <!-- Golden Retrievers Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Golden Retrievers</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Golden%20Retrievers" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Golden retriever/Golden retriever (4).jpeg" alt="Golden Retriever">
+                        <div class="breed-description">
+                            <p>Energetic and playful</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Golden retriever/Golden retriever (2).jpeg" alt="Golden Retriever">
+                        <div class="breed-description">
+                            <p>Loves to play fetch</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Golden retriever/Golden retriever (3).jpeg" alt="Golden Retriever">
+                        <div class="breed-description">
+                            <p>Great with children</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Golden retriever/Golden retriever (4).jpeg" alt="Golden Retriever">
+                        <div class="breed-description">
+                            <p>Friendly family dog</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Energetic, goofy, and full of love. Excellent family dog that gets along with everyone. Loves playing fetch and swimming. That golden coat will turn heads!</p>
+                    <p><strong>Characteristics:</strong> Loyal, gentle, trainable</p>
+                    <p><strong>Ideal For:</strong> Families, active individuals</p>
+                </div>
+            </div>
+            
+            <!-- Labrador Retrievers Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Labrador Retrievers</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Labrador%20Retrievers" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Labdour.jpg" alt="Labrador Retriever">
+                        <div class="breed-description">
+                            <p>Outgoing and friendly</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Labrador.jpg" alt="Labrador Retriever">
+                        <div class="breed-description">
+                            <p>Loves water activities</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Labrador/Labrador (1).jpeg" alt="Labrador Retriever">
+                        <div class="breed-description">
+                            <p>Excellent family pet</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Labdour.jpg" alt="Labrador Retriever">
+                        <div class="breed-description">
+                            <p>Highly trainable</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Friendly, charismatic, and great with families. Loves swimming and fetch. Highly trainable with a gentle temperament that wins everyone's heart.</p>
+                    <p><strong>Characteristics:</strong> Energetic, friendly, intelligent</p>
+                    <p><strong>Ideal For:</strong> Families, outdoor enthusiasts</p>
+                </div>
+            </div>
+
+            <!-- Siberian Huskies Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Siberian Huskies</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Siberian%20Huskies" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Husky/Husky (2).jpeg" alt="Siberian Husky">
+                        <div class="breed-description">
+                            <p>Striking blue eyes</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Husky/Husky (1).jpeg" alt="Siberian Husky">
+                        <div class="breed-description">
+                            <p>High energy</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Husky/Husky (3).jpeg" alt="Siberian Husky">
+                        <div class="breed-description">
+                            <p>Affectionate nature</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Husky/Husky (4).jpeg" alt="Siberian Husky">
+                        <div class="breed-description">
+                            <p>Needs ample exercise</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Stunning beauty with striking blue eyes. High energy and vocal - needs ample exercise. Independent spirit but affectionate. Secure fencing is a must!</p>
+                    <p><strong>Characteristics:</strong> Energetic, striking, loyal</p>
+                    <p><strong>Ideal For:</strong> Active families, cold climates</p>
+                </div>
+            </div>
+            
+            <!-- Toy Poodles Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Toy Poodles</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Toy%20Poodles" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Toy Poodle/ToyPoodle (1).jpg" alt="Toy Poodle">
+                        <div class="breed-description">
+                            <p>Intelligent and elegant</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Toy Poodle/ToyPoodle (2).jpg" alt="Toy Poodle">
+                        <div class="breed-description">
+                            <p>Hypoallergenic coat</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Toy Poodle/ToyPoodle (3).jpg" alt="Toy Poodle">
+                        <div class="breed-description">
+                            <p>Surprisingly athletic</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Toy Poodle/ToyPoodle (1).jpg" alt="Toy Poodle">
+                        <div class="breed-description">
+                            <p>Full of attitude</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Intelligent, elegant, and full of attitude. Hypoallergenic coat that needs professional grooming. Surprisingly athletic despite petite size.</p>
+                    <p><strong>Characteristics:</strong> Intelligent, hypoallergenic, elegant</p>
+                    <p><strong>Ideal For:</strong> Allergy sufferers, families</p>
+                </div>
+            </div>
+            
+            <!-- German Shepherds Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">German Shepherds</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20German%20Shepherds" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/German Sephard.jpg" alt="German Shepherd">
+                        <div class="breed-description">
+                            <p>Loyal and intelligent</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/German Shepard/German Shepard (2).jpeg" alt="German Shepherd">
+                        <div class="breed-description">
+                            <p>Excellent guard dog</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/German Shepard/German Shepard (3).jpeg" alt="German Shepherd">
+                        <div class="breed-description">
+                            <p>Needs mental stimulation</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/German Sephard.jpg" alt="German Shepherd">
+                        <div class="breed-description">
+                            <p>Forms strong bonds</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Graceful yet powerful. Extremely intelligent and loyal. Excellent guard dog that needs mental stimulation and consistent training. Perfect for active owners.</p>
+                    <p><strong>Characteristics:</strong> Loyal, protective, intelligent</p>
+                    <p><strong>Ideal For:</strong> Families, security roles</p>
+                </div>
+            </div>
+            
+            <!-- Pomeranian Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Pomeranians</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Pomeranians" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Pomeranin Puppy.jpg" alt="Pomeranian">
+                        <div class="breed-description">
+                            <p>Lively and affectionate</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/PomeranianPuppies/Pomeranian (2).jpeg" alt="Pomeranian">
+                        <div class="breed-description">
+                            <p>Big personality</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/PomeranianPuppies/Pomeranian (3).jpeg" alt="Pomeranian">
+                        <div class="breed-description">
+                            <p>Needs regular grooming</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Pomeranin Puppy.jpg" alt="Pomeranian">
+                        <div class="breed-description">
+                            <p>Perfect for apartments</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Small package with big personality! Lively and affectionate. Perfect for apartments but needs regular grooming. Loves being the center of attention.</p>
+                    <p><strong>Characteristics:</strong> Lively, affectionate, bold</p>
+                    <p><strong>Ideal For:</strong> Apartment dwellers, families</p>
+                </div>
+            </div>
+            
+            <!-- Shih Tzu Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Shih Tzus</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Shih%20Tzus" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Shizu.jpg" alt="Shih Tzu">
+                        <div class="breed-description">
+                            <p>Elegant and sweet</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Shihtzu/shihtzu (1).png" alt="Shih Tzu">
+                        <div class="breed-description">
+                            <p>Loves cuddles</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Shihtzu/shihtzu (2).png" alt="Shih Tzu">
+                        <div class="breed-description">
+                            <p>Needs daily brushing</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Shihtzu/shihtzu (4).png" alt="Shih Tzu">
+                        <div class="breed-description">
+                            <p>Calm companion</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Elegant and sweet-natured companion. Thrives in calm environments and loves cuddles. Long luxurious coat requires daily brushing - perfect for those who love pampering their pets.</p>
+                    <p><strong>Characteristics:</strong> Affectionate, elegant, calm</p>
+                    <p><strong>Ideal For:</strong> Calm households, pet pamperers</p>
+                </div>
+            </div>
+            
+            <!-- Rottweiler Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Rottweilers</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Rottweilers" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Rottweiler dog/dog-4372036_1280.jpg" alt="Rottweiler">
+                        <div class="breed-description">
+                            <p>Powerful presence</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Rottweiler dog/dog-6945696_1280.jpg" alt="Rottweiler">
+                        <div class="breed-description">
+                            <p>Gentle with family</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Rottweiler dog/Rottweiler dog (1).jpeg" alt="Rottweiler">
+                        <div class="breed-description">
+                            <p>Protective nature</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Rottweiler dog/dog-4372036_1280.jpg" alt="Rottweiler">
+                        <div class="breed-description">
+                            <p>Needs strong leadership</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Powerful presence with a heart of gold. Needs strong leadership and socialization. Surprisingly gentle with family. Protective nature makes an excellent guard dog.</p>
+                    <p><strong>Characteristics:</strong> Protective, gentle, loyal</p>
+                    <p><strong>Ideal For:</strong> Families, security roles</p>
+                </div>
+            </div>
+            
+            <!-- Great Dane Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Great Danes</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Great%20Danes" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Greate dane/Greate dane (1).jpeg" alt="Great Dane">
+                        <div class="breed-description">
+                            <p>Gentle giant</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Greate dane/Greate dane (2).jpeg" alt="Great Dane">
+                        <div class="breed-description">
+                            <p>Graceful despite size</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Greate dane/Greate dane (3).jpeg" alt="Great Dane">
+                        <div class="breed-description">
+                            <p>Needs ample space</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Greate dane/Greate dane (1).jpeg" alt="Great Dane">
+                        <div class="breed-description">
+                            <p>Loves to cuddle</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Tall, handsome, and graceful despite massive size. Gentle giant who thinks he's a lap dog. Needs space to stretch those long legs!</p>
+                    <p><strong>Characteristics:</strong> Gentle, graceful, affectionate</p>
+                    <p><strong>Ideal For:</strong> Families with space, calm households</p>
+                </div>
+            </div>
+            
+            <!-- St. Bernard Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">St. Bernards</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20St.%20Bernards" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/St Bernad dog/St Bernad dog (2).jpeg" alt="St. Bernard">
+                        <div class="breed-description">
+                            <p>Calm and patient</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/St Bernad dog/St Bernad dog (1).jpeg" alt="St. Bernard">
+                        <div class="breed-description">
+                            <p>Incredible strength</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/St Bernad dog/St Bernad dog (2).jpeg" alt="St. Bernard">
+                        <div class="breed-description">
+                            <p>Deep commanding bark</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/St Bernad dog/St Bernad dog (2).jpeg" alt="St. Bernard">
+                        <div class="breed-description">
+                            <p>Noble rescue dog</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Calm, patient, and noble. Famous rescue dog with incredible strength. That deep bark commands respect! Drools more than he acts though.</p>
+                    <p><strong>Characteristics:</strong> Calm, strong, noble</p>
+                    <p><strong>Ideal For:</strong> Families with space, calm households</p>
+                </div>
+            </div>
+            
+            <!-- Doberman Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Dobermans</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Dobermans" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.28.01 AM (1).jpeg" alt="Doberman">
+                        <div class="breed-description">
+                            <p>Sleek and athletic</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.28.01 AM.jpeg" alt="Doberman">
+                        <div class="breed-description">
+                            <p>Intensely loyal</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.27.56 AM.jpeg" alt="Doberman">
+                        <div class="breed-description">
+                            <p>Fierce protector</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.28.01 AM (1).jpeg" alt="Doberman">
+                        <div class="breed-description">
+                            <p>Low maintenance coat</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Sleek, athletic, and intensely loyal. Fierce protector with family but sweetheart at home. Needs vigorous exercise and mental challenges. That sleek coat is low maintenance!</p>
+                    <p><strong>Characteristics:</strong> Loyal, protective, athletic</p>
+                    <p><strong>Ideal For:</strong> Active owners, security roles</p>
+                </div>
+            </div>
+            
+            <!-- French Bulldog Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">French Bulldogs</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20French%20Bulldogs" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/French Bulldog/bulldog (2).jpeg" alt="French Bulldog">
+                        <div class="breed-description">
+                            <p>Charming bat-eared</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/French Bulldog/bulldog (1).jpeg" alt="French Bulldog">
+                        <div class="breed-description">
+                            <p>Big personality</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/French Bulldog/bulldog (3).jpeg" alt="French Bulldog">
+                        <div class="breed-description">
+                            <p>Adorable snorts</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/French Bulldog/bulldog (2).jpeg" alt="French Bulldog">
+                        <div class="breed-description">
+                            <p>Great for city living</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Charming, bat-eared beauty with a big personality. Adapts well to city living. Not much of a barker but snorts and snores adorably. Those big eyes will melt your heart!</p>
+                    <p><strong>Characteristics:</strong> Charming, affectionate, calm</p>
+                    <p><strong>Ideal For:</strong> City dwellers, families</p>
+                </div>
+            </div>
+            
+            <!-- Maltese Section -->
+            <div class="breed-section">
+                <div class="breed-header">
+                    <h3 class="breed-title">Maltese</h3>
+                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20Maltese" class="btn whatsapp-btn btn-sm"><i class="fab fa-whatsapp me-2"></i> Inquire</a>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="./assets/images/Maltese/Maltese (3).jpeg" alt="Maltese">
+                        <div class="breed-description">
+                            <p>Petite and glamorous</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Maltese/Maltese (1).jpeg" alt="Maltese">
+                        <div class="breed-description">
+                            <p>Silky white coat</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Maltese/Maltese (2).jpeg" alt="Maltese">
+                        <div class="breed-description">
+                            <p>Hypoallergenic</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="./assets/images/Maltese/Maltese (3).jpeg" alt="Maltese">
+                        <div class="breed-description">
+                            <p>Playful and affectionate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="breed-info">
+                    <p><strong>Description:</strong> Petite glamour girl with a silky white coat. Loves being pampered and carried around. Surprisingly playful and affectionate. Hypoallergenic and perfect for apartments.</p>
+                    <p><strong>Characteristics:</strong> Affectionate, hypoallergenic, playful</p>
+                    <p><strong>Ideal For:</strong> Apartment dwellers, allergy sufferers</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Video Section -->
     <section id="videos" class="py-5">
@@ -1024,7 +1101,7 @@
     </section>
 
     <!-- Footer -->
-     <footer>
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -1063,3 +1140,89 @@
             </div>
         </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const puppies = [
+            {
+                image: "./assets/images/Golden retriever/Golden retriever (4).jpeg",
+                message: "I'm a cuddly Golden Retriever waiting for a loving home. Will you be my forever family?"
+            },
+            {
+                image: "./assets/images/Labrador/Labrador (1).jpeg",
+                message: "I'm a playful Labrador who loves adventures! Please adopt me and let's explore together!"
+            },
+            {
+                image: "./assets/images/Husky/Husky (2).jpeg",
+                message: "I'm a Husky with a big heart and soulful eyes. Take me home and let's make memories!"
+            },
+            {
+                image: "./assets/images/Toy Poodle/ToyPoodle (1).jpg",
+                message: "I'm a tiny Toy Poodle full of love. Will you give me a cozy home to call my own?"
+            },
+            {
+                image: "./assets/images/Pomeranin Puppy.jpg",
+                message: "I'm a fluffy Pomeranian ready to fill your life with joy. Adopt me today!"
+            }
+        ];
+
+        function showAdoptionPopup() {
+            const popup = document.getElementById('adoptionPopup');
+            const popupImage = document.getElementById('popupPuppyImage');
+            const popupMessage = document.getElementById('popupMessage');
+            const randomPuppy = puppies[Math.floor(Math.random() * puppies.length)];
+            
+            popupImage.src = randomPuppy.image;
+            popupMessage.textContent = randomPuppy.message;
+            popup.style.display = 'flex';
+            
+            popupImage.onclick = () => showFullImage(randomPuppy.image);
+        }
+
+        function closeAdoptionPopup() {
+            const popup = document.getElementById('adoptionPopup');
+            popup.classList.add('animate__zoomOut');
+            setTimeout(() => {
+                popup.style.display = 'none';
+                popup.classList.remove('animate__zoomOut');
+            }, 500);
+        }
+
+        function showFullImage(imageSrc) {
+            const fullImageOverlay = document.getElementById('fullImageOverlay');
+            const fullPuppyImage = document.getElementById('fullPuppyImage');
+            fullPuppyImage.src = imageSrc;
+            fullImageOverlay.style.display = 'flex';
+        }
+
+        function closeFullImage() {
+            const fullImageOverlay = document.getElementById('fullImageOverlay');
+            fullImageOverlay.classList.add('animate__zoomOut');
+            setTimeout(() => {
+                fullImageOverlay.style.display = 'none';
+                fullImageOverlay.classList.remove('animate__zoomOut');
+            }, 500);
+        }
+
+        // Show popup every 6 seconds
+        setInterval(showAdoptionPopup, 6000);
+
+        // Show first popup after 2 seconds
+        setTimeout(showAdoptionPopup, 2000);
+
+        // Close popup when clicking outside
+        document.getElementById('adoptionPopup').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeAdoptionPopup();
+            }
+        });
+
+        document.getElementById('fullImageOverlay').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeFullImage();
+            }
+        });
+    </script>
+</body>
+</html>
