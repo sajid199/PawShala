@@ -178,6 +178,76 @@
             color: white;
         }
 
+        /* WhatsApp Floating Button Styles */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-fixed a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            font-size: 2rem;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .whatsapp-fixed a:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            white-space: nowrap;
+            background: white;
+            color: #075E54;
+            padding: 8px 15px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-fixed a:hover .whatsapp-tooltip {
+            opacity: 1;
+            right: 75px;
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .whatsapp-fixed a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
         footer {
             background-color: var(--dark-color);
             color: white;
@@ -236,6 +306,31 @@
                 font-size: 1rem;
                 margin-left: 5px;
             }
+
+            .whatsapp-fixed {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-fixed a {
+                width: 50px;
+                height: 50px;
+                font-size: 1.8rem;
+            }
+            
+            .whatsapp-tooltip {
+                display: none;
+            }
+            
+            .whatsapp-fixed a::after {
+                animation: pulse-mobile 2s infinite;
+            }
+            
+            @keyframes pulse-mobile {
+                0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+                70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            }
         }
 
         @media (max-width: 576px) {
@@ -273,6 +368,12 @@
             .tagline {
                 font-size: 0.9rem;
                 margin-left: 3px;
+            }
+
+            .whatsapp-fixed a {
+                width: 45px;
+                height: 45px;
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -379,7 +480,7 @@
                 </div>
                 <div class="col-md-6 order-md-1">
                     <h3 class="mt-3 mt-md-0">Bath and Brush</h3>
-                    <p>A refreshing bath with premium pet-safe shampoo followed by a thorough brushing to remove loose fur and prevent matting. Leaves your pet’s coat shiny and smooth.</p>
+                    <p>A refreshing bath with premium pet-safe shampoo followed by a thorough brushing to remove loose fur and prevent matting. Leaves your pet's coat shiny and smooth.</p>
                     <p><strong>Duration:</strong> 45 minutes<br><strong>Price:</strong> Starts at ₹200<br><strong>Suitable for:</strong> Short and long-haired breeds</p>
                     <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20Bath%20and%20Brush%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
                 </div>
@@ -392,7 +493,7 @@
                 </div>
                 <div class="col-md-6 order-md-2">
                     <h3 class="mt-3 mt-md-0">Nail Trimming</h3>
-                    <p>Safe and gentle nail trimming to keep your pet’s paws healthy and comfortable. Our groomers ensure a stress-free experience for your pet.</p>
+                    <p>Safe and gentle nail trimming to keep your pet's paws healthy and comfortable. Our groomers ensure a stress-free experience for your pet.</p>
                     <p><strong>Duration:</strong> 15-20 minutes<br><strong>Price:</strong> Starts at ₹100<br><strong>Suitable for:</strong> All pets</p>
                     <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20Nail%20Trimming%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
                 </div>
@@ -405,7 +506,7 @@
                 </div>
                 <div class="col-md-6 order-md-1">
                     <h3 class="mt-3 mt-md-0">Ear Cleaning</h3>
-                    <p>Gentle cleaning to remove dirt and wax buildup from your pet’s ears, reducing the risk of infections and ensuring their comfort.</p>
+                    <p>Gentle cleaning to remove dirt and wax buildup from your pet's ears, reducing the risk of infections and ensuring their comfort.</p>
                     <p><strong>Duration:</strong> 15 minutes<br><strong>Price:</strong> Starts at ₹80<br><strong>Suitable for:</strong> All pets, especially floppy-eared breeds</p>
                     <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20Ear%20Cleaning%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
                 </div>
@@ -418,7 +519,7 @@
                 </div>
                 <div class="col-md-6 order-md-2">
                     <h3 class="mt-3 mt-md-0">Teeth Brushing</h3>
-                    <p>Keep your pet’s dental health in check with our professional teeth brushing service, using pet-safe toothpaste to freshen breath and reduce plaque.</p>
+                    <p>Keep your pet's dental health in check with our professional teeth brushing service, using pet-safe toothpaste to freshen breath and reduce plaque.</p>
                     <p><strong>Duration:</strong> 15 minutes<br><strong>Price:</strong> Starts at ₹90<br><strong>Suitable for:</strong> All pets</p>
                     <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20Teeth%20Brushing%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
                 </div>
@@ -494,6 +595,14 @@
         </div>
     </div>
 
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-fixed animate__animated animate__fadeInUp">
+        <a href="https://wa.me/919975921236" title="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">Chat with us!</span>
+        </a>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -529,6 +638,27 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // WhatsApp button hover effects
+        const whatsappBtn = document.querySelector('.whatsapp-fixed a');
+        
+        whatsappBtn.addEventListener('mouseenter', () => {
+            whatsappBtn.style.transform = 'scale(1.1)';
+        });
+        
+        whatsappBtn.addEventListener('mouseleave', () => {
+            whatsappBtn.style.transform = 'scale(1)';
+        });
+        
+        // Hide WhatsApp button when printing
+        window.matchMedia('print').addListener((mql) => {
+            const whatsapp = document.querySelector('.whatsapp-fixed');
+            if (mql.matches) {
+                whatsapp.style.display = 'none';
+            } else {
+                whatsapp.style.display = 'block';
+            }
         });
     </script>
 </body>

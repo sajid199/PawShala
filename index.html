@@ -255,6 +255,76 @@
         font-size: 1rem;
       }
 
+      /* WhatsApp Floating Button Styles */
+      .whatsapp-fixed {
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          z-index: 1000;
+          transition: all 0.3s ease;
+      }
+
+      .whatsapp-fixed a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 60px;
+          height: 60px;
+          background-color: #25D366;
+          color: white;
+          border-radius: 50%;
+          box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+          transition: all 0.3s ease;
+          font-size: 2rem;
+          text-decoration: none;
+          position: relative;
+      }
+
+      .whatsapp-fixed a:hover {
+          background-color: #128C7E;
+          transform: scale(1.1);
+          box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+      }
+
+      .whatsapp-tooltip {
+          position: absolute;
+          right: 70px;
+          white-space: nowrap;
+          background: white;
+          color: #075E54;
+          padding: 8px 15px;
+          border-radius: 25px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          opacity: 0;
+          pointer-events: none;
+          transition: all 0.3s ease;
+      }
+
+      .whatsapp-fixed a:hover .whatsapp-tooltip {
+          opacity: 1;
+          right: 75px;
+      }
+
+      /* Pulse animation */
+      @keyframes pulse {
+          0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+          70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+          100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+      }
+
+      .whatsapp-fixed a::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          border-radius: 50%;
+          animation: pulse 2s infinite;
+      }
+
       @media (max-width: 768px) {
         .hero-title {
           font-size: 2.2rem;
@@ -291,6 +361,31 @@
           font-size: 1rem;
           margin-left: 5px;
         }
+
+        .whatsapp-fixed {
+            bottom: 20px;
+            right: 20px;
+        }
+        
+        .whatsapp-fixed a {
+            width: 50px;
+            height: 50px;
+            font-size: 1.8rem;
+        }
+        
+        .whatsapp-tooltip {
+            display: none;
+        }
+        
+        .whatsapp-fixed a::after {
+            animation: pulse-mobile 2s infinite;
+        }
+        
+        @keyframes pulse-mobile {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
       }
 
       @media (max-width: 576px) {
@@ -324,6 +419,12 @@
         .tagline {
           font-size: 0.9rem;
           margin-left: 3px;
+        }
+
+        .whatsapp-fixed a {
+            width: 45px;
+            height: 45px;
+            font-size: 1.5rem;
         }
       }
     </style>
@@ -976,7 +1077,7 @@
               <img
                 src="./assets/images/Customers/Harshal.jpg"
                 class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Ajay & Manish"
+                alt="Harshal"
                 style="width: 120px; height: 120px; object-fit: cover"
               />
               <div class="card-body">
@@ -996,7 +1097,7 @@
               <img
                 src="./assets/images/Customers/rahul.jpg"
                 class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Sagar & Rahul"
+                alt="Rahul"
                 style="width: 120px; height: 120px; object-fit: cover"
               />
               <div class="card-body">
@@ -1009,6 +1110,25 @@
               </div>
             </div>
           </div>
+          <!-- Client 13 -->
+<div class="col-md-4 mb-4">
+  <div class="card h-100 shadow-sm text-center">
+    <img
+      src="./assets/images/Customers/Manvendra kolhe.jpg"
+      class="card-img-top rounded-circle mx-auto mt-4"
+      alt="Happy Beagle Owners"
+      style="width: 120px; height: 120px; object-fit: cover"
+    />
+    <div class="card-body">
+      <h5 class="card-title">Manvendra Kolhe</h5>
+      <div class="star-rating" data-rating="5"></div>
+      <p class="card-text">
+        "Adopting this adorable Beagle pup from PuppyAdda was an unforgettable moment. Thank you for the smooth and joyful process!"
+      </p>
+    </div>
+  </div>
+</div>
+
         </div>
       </div>
     </section>
@@ -1178,11 +1298,19 @@
           <a href="tel:+919975921236" class="btn btn-primary me-3"
             ><i class="fas fa-phone me-2"></i> Call Now</a
           >
-          <a href="https://wa.me/919975921236" class="btn whatsapp-btn"
-            ><i class="fab fa-whatsapp me-2"></i> WhatsApp</a
-          >
+          <a href="https://wa.me/919975921236" class="btn whatsapp-btn">
+            <i class="fab fa-whatsapp me-2"></i> WhatsApp
+          </a>
         </div>
       </div>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-fixed animate__animated animate__fadeInUp">
+        <a href="https://wa.me/919975921236" title="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-tooltip">Chat with us!</span>
+        </a>
     </div>
 
     <!-- Bootstrap JS -->
@@ -1514,12 +1642,12 @@
       }
 
       // Show popup initially after 10 seconds
-      setTimeout(showPopup, 10000);
+      setTimeout(showPopup, 60000);
 
       // Show popup every 10 seconds after closing
       let popupInterval;
       function startPopupInterval() {
-        popupInterval = setInterval(showPopup, 10000);
+        popupInterval = setInterval(showPopup, 60000);
       }
 
       // Close popup and restart interval
@@ -1542,6 +1670,27 @@
             behavior: "smooth",
           });
         });
+      });
+
+      // WhatsApp button hover effects
+      const whatsappBtn = document.querySelector('.whatsapp-fixed a');
+      
+      whatsappBtn.addEventListener('mouseenter', () => {
+          whatsappBtn.style.transform = 'scale(1.1)';
+      });
+      
+      whatsappBtn.addEventListener('mouseleave', () => {
+          whatsappBtn.style.transform = 'scale(1)';
+      });
+      
+      // Hide WhatsApp button when printing
+      window.matchMedia('print').addListener((mql) => {
+          const whatsapp = document.querySelector('.whatsapp-fixed');
+          if (mql.matches) {
+              whatsapp.style.display = 'none';
+          } else {
+              whatsapp.style.display = 'block';
+          }
       });
     </script>
   </body>
