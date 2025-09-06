@@ -1,1697 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PuppyAdda - Pet Paradise</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./assets/images/Logo/pupy_adda_logo-removebg-preview2.ico"
-    />
-    <!-- Google Fonts for Cursive Tagline -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <!-- Animate.css -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Suspended - Payment Required</title>
     <style>
-      :root {
-        --primary-color: #ff6b6b;
-        --secondary-color: #4ecdc4;
-        --dark-color: #292f36;
-        --light-color: #f7fff7;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-        overflow-x: hidden;
-        background-color: var(--light-color);
-      }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
 
-      .navbar {
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out;
+        }
 
-      .navbar-brand {
-        font-weight: 700;
-        color: var(--primary-color) !important;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart-broken {
+            font-size: 80px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .message-box {
+            background: #f8f9fa;
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-box p {
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+
+        .work-details {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #74b9ff;
+        }
+
+        .work-list {
+            text-align: left;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .work-list li {
+            margin: 8px 0;
+            list-style: none;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .work-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+        }
+
+        .payment-section {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
+        }
+
+        .qr-placeholder {
+        width: 200px;
+        height: 200px;
+        background: white;
+        border: 3px dashed #6c5ce7;
+        border-radius: 15px;
+        margin: 20px auto;
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
-      }
-
-      .nav-link {
-        font-weight: 500;
-        margin: 0 10px;
-        transition: color 0.3s;
-      }
-
-      .nav-link:hover {
-        color: var(--primary-color);
-      }
-
-      .logo {
-        width: 50px;
-        height: auto;
-        margin-right: 10px;
-      }
-
-      .tagline {
-        font-family: "Dancing Script", cursive;
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: var(--dark-color);
-        margin-left: 5px;
-        letter-spacing: 1px;
-      }
-
-      .hero-section {
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-          url("https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2098&q=80");
-        background-size: cover;
-        background-position: center;
-        color: white;
-        padding: 120px 0;
-        text-align: center;
-      }
-
-      .hero-title {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-      }
-
-      .hero-subtitle {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-      }
-
-      .btn-primary {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-        padding: 10px 20px;
-        font-size: 1.1rem;
-      }
-
-      .btn-primary:hover {
-        background-color: #ff5252;
-        border-color: #ff5252;
-      }
-
-      .section-title {
-        font-weight: 700;
-        color: var(--dark-color);
-        margin-bottom: 40px;
-        position: relative;
-        text-align: center;
-      }
-
-      .section-title:after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background-color: var(--primary-color);
-      }
-
-      .carousel-item img {
-        height: 600px;
-        object-fit: cover;
-      }
-
-      .carousel-caption {
-        background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 10px;
-        padding: 15px;
-      }
-
-      .card {
-        border: none;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s, box-shadow 0.3s;
-        margin-bottom: 20px;
-      }
-
-      .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-      }
-
-      .card-img-top {
-        height: 250px;
-        object-fit: cover;
-      }
-
-      .popup-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.7);
-        display: flex;
         justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        display: none;
-      }
+        overflow: hidden; /* ensure image doesn't spill out */
+    } .qr-placeholder img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* keeps aspect ratio without cropping */
+        border-radius: 10px; /* optional: smooth corners to match */
+    }
 
-      .popup-content {
-        background-color: white;
-        padding: 30px;
-        border-radius: 15px;
-        text-align: center;
-        max-width: 500px;
-        width: 90%;
-        position: relative;
-      }
-
-      .close-popup {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--dark-color);
-      }
-
-      .whatsapp-btn {
-        background-color: #25d366;
-        color: white;
-        border: none;
-      }
-
-      .whatsapp-btn:hover {
-        background-color: #128c7e;
-        color: white;
-      }
-
-      footer {
-        background-color: var(--dark-color);
-        color: white;
-        padding: 40px 0;
-      }
-
-      footer a {
-        color: var(--light-color);
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      footer a:hover {
-        color: var(--primary-color);
-      }
-
-      footer .social-icons a {
-        font-size: 1.5rem;
-        margin: 0 10px;
-      }
-
-      .play-video-link {
-        color: var(--primary-color);
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s;
-      }
-
-      .play-video-link:hover {
-        color: #ff5252;
-        text-decoration: underline;
-      }
-
-      #videoContainer {
-        display: none;
-        margin-top: 20px;
-      }
-
-      .star-rating {
-        color: #ffc107;
-        margin-bottom: 10px;
-      }
-
-      .star-rating .fas.fa-star,
-      .star-rating .fa-regular.fa-star {
-        font-size: 1rem;
-      }
-
-      /* WhatsApp Floating Button Styles */
-      .whatsapp-fixed {
-          position: fixed;
-          bottom: 30px;
-          right: 30px;
-          z-index: 1000;
-          transition: all 0.3s ease;
-      }
-
-      .whatsapp-fixed a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 60px;
-          height: 60px;
-          background-color: #25D366;
-          color: white;
-          border-radius: 50%;
-          box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-          transition: all 0.3s ease;
-          font-size: 2rem;
-          text-decoration: none;
-          position: relative;
-      }
-
-      .whatsapp-fixed a:hover {
-          background-color: #128C7E;
-          transform: scale(1.1);
-          box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-      }
-
-      .whatsapp-tooltip {
-          position: absolute;
-          right: 70px;
-          white-space: nowrap;
-          background: white;
-          color: #075E54;
-          padding: 8px 15px;
-          border-radius: 25px;
-          font-size: 0.9rem;
-          font-weight: 600;
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-          opacity: 0;
-          pointer-events: none;
-          transition: all 0.3s ease;
-      }
-
-      .whatsapp-fixed a:hover .whatsapp-tooltip {
-          opacity: 1;
-          right: 75px;
-      }
-
-      /* Pulse animation */
-      @keyframes pulse {
-          0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-          70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-          100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-      }
-
-      .whatsapp-fixed a::after {
-          content: '';
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          border-radius: 50%;
-          animation: pulse 2s infinite;
-      }
-
-      @media (max-width: 768px) {
-        .hero-title {
-          font-size: 2.2rem;
+        .payment-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
         }
 
-        .hero-subtitle {
-          font-size: 1.2rem;
+        .cta-button {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
         }
 
-        .carousel-item img {
-          height: 300px;
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 184, 148, 0.4);
         }
 
-        .card-img-top {
-          height: 200px;
+        .footer {
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+            font-style: italic;
         }
 
-        footer .col-md-4 {
-          margin-bottom: 30px;
+        .tears {
+            font-size: 24px;
+            color: #74b9ff;
+            margin: 10px 5px;
+            animation: fall 3s infinite;
         }
 
-        .navbar-brand {
-          display: flex;
-          align-items: center;
-          flex-wrap: nowrap;
+        @keyframes fall {
+            0% { transform: translateY(-10px); opacity: 1; }
+            100% { transform: translateY(20px); opacity: 0; }
         }
 
-        .navbar-brand .logo {
-          width: 40px;
-          margin-right: 8px;
-        }
-
-        .tagline {
-          font-size: 1rem;
-          margin-left: 5px;
-        }
-
-        .whatsapp-fixed {
-            bottom: 20px;
-            right: 20px;
-        }
-        
-        .whatsapp-fixed a {
-            width: 50px;
-            height: 50px;
-            font-size: 1.8rem;
-        }
-        
-        .whatsapp-tooltip {
-            display: none;
-        }
-        
-        .whatsapp-fixed a::after {
-            animation: pulse-mobile 2s infinite;
-        }
-        
-        @keyframes pulse-mobile {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-      }
-
-      @media (max-width: 576px) {
-        .hero-title {
-          font-size: 1.8rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1rem;
-        }
-
-        .carousel-caption h5 {
-          font-size: 1rem;
-        }
-
-        .carousel-caption p {
-          font-size: 0.8rem;
-        }
-
-        .navbar-brand {
-          display: flex;
-          align-items: center;
-          flex-wrap: nowrap;
-        }
-
-        .navbar-brand .logo {
-          width: 35px;
-          margin-right: 5px;
-        }
-
-        .tagline {
-          font-size: 0.9rem;
-          margin-left: 3px;
-        }
-
-        .whatsapp-fixed a {
-            width: 45px;
-            height: 45px;
-            font-size: 1.5rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="index.html">
-          <img
-            class="logo"
-            src="./assets/images/Logo/pupy_adda_logo.png"
-            alt="PuppyAdda Logo"
-          />
-          PuppyAdda <span class="tagline">Pet Paradise</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="services.html">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gallery.html">Gallery</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Section with Carousel -->
-    <section class="hero-section">
-      <div id="puppyCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#puppyCarousel"
-            data-bs-slide-to="0"
-            class="active"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#puppyCarousel"
-            data-bs-slide-to="1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#puppyCarousel"
-            data-bs-slide-to="2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#puppyCarousel"
-            data-bs-slide-to="3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-              class="d-block w-100"
-              alt="Golden Retriever Puppy"
-            />
-            <div class="carousel-caption d-block">
-              <h1 class="hero-title animate__animated animate__fadeInDown">
-                Find Your Perfect <span class="text-warning">Doggo Dost</span>
-              </h1>
-              <p class="hero-subtitle animate__animated animate__fadeInUp">
-                Adopt, Love, Repeat - Bringing Happiness to Your Home
-              </p>
-              <a
-                href="#puppies"
-                class="btn btn-primary animate__animated animate__pulse"
-                >View Our Pups</a
-              >
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=1064&q=80"
-              class="d-block w-100"
-              alt="Labrador Puppy"
-            />
-            <div class="carousel-caption d-block">
-              <h1 class="hero-title animate__animated animate__fadeInDown">
-                Find Your Perfect <span class="text-warning">Doggo Dost</span>
-              </h1>
-              <p class="hero-subtitle animate__animated animate__fadeInUp">
-                Adopt, Love, Repeat - Bringing Happiness to Your Home
-              </p>
-              <a
-                href="#puppies"
-                class="btn btn-primary animate__animated animate__pulse"
-                >View Our Pups</a
-              >
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://images.unsplash.com/photo-1594149929911-78975a43d4f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-              class="d-block w-100"
-              alt="Beagle Puppy"
-            />
-            <div class="carousel-caption d-block">
-              <h1 class="hero-title animate__animated animate__fadeInDown">
-                Find Your Perfect <span class="text-warning">Doggo Dost</span>
-              </h1>
-              <p class="hero-subtitle animate__animated animate__fadeInUp">
-                Adopt, Love, Repeat - Bringing Happiness to Your Home
-              </p>
-              <a
-                href="#puppies"
-                class="btn btn-primary animate__animated animate__pulse"
-                >View Our Pups</a
-              >
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2098&q=80"
-              class="d-block w-100"
-              alt="Husky Puppy"
-            />
-            <div class="carousel-caption d-block">
-              <h1 class="hero-title animate__animated animate__fadeInDown">
-                Find Your Perfect <span class="text-warning">Doggo Dost</span>
-              </h1>
-              <p class="hero-subtitle animate__animated animate__fadeInUp">
-                Adopt, Love, Repeat - Bringing Happiness to Your Home
-              </p>
-              <a
-                href="#puppies"
-                class="btn btn-primary animate__animated animate__pulse"
-                >View Our Pups</a
-              >
-            </div>
-          </div>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#puppyCarousel"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#puppyCarousel"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </section>
-
-    <!-- Meet Our Puppies Section -->
-    <section id="puppies" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="section-title">Meet Our Puppies</h2>
-        <p class="text-center mb-5">
-          Click on a puppy to learn more about adoption!
-        </p>
-        <div class="row">
-          <!-- Chihuahua -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="14"
-            >
-              <img
-                src="./assets/images/chihuwa/img1.jpg"
-                class="card-img-top"
-                alt="Chihuahua"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Chihuahua</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Labrador Retriever -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="1"
-            >
-              <img
-                src="./assets/images/Labdour.jpg"
-                class="card-img-top"
-                alt="Labrador Retriever"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Labrador Retriever</h5>
-              </div>
-            </div>
-          </div>
-          <!-- German Shepherd -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="2"
-            >
-              <img
-                src="./assets/images/German Sephard.jpg"
-                class="card-img-top"
-                alt="German Shepherd"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">German Shepherd</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Pomeranian -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="3"
-            >
-              <img
-                src="./assets/images/Pomeranin Puppy.jpg"
-                class="card-img-top"
-                alt="Pomeranian"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Pomeranian</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Siberian Husky -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="4"
-            >
-              <img
-                src="./assets/images/Husky.jpg"
-                class="card-img-top"
-                alt="Siberian Husky"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Siberian Husky</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Shih Tzu -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="5"
-            >
-              <img
-                src="./assets/images/Shizu.jpg"
-                class="card-img-top"
-                alt="Shih Tzu"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Shih Tzu</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Toy Poodle -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="6"
-            >
-              <img
-                src="./assets/images/Toy Poodle/ToyPoodle (1).jpg"
-                class="card-img-top"
-                alt="Toy Poodle"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Toy Poodle</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Golden Retriever -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="7"
-            >
-              <img
-                src="./assets/images/Golden retriever/Golden retriever (4).jpeg"
-                class="card-img-top"
-                alt="Golden Retriever"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Golden Retriever</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Rottweiler -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="8"
-            >
-              <img
-                src="./assets/images/Rottweiler dog/dog-4372036_1280.jpg"
-                class="card-img-top"
-                alt="Rottweiler"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Rottweiler</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Great Dane -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="9"
-            >
-              <img
-                src="./assets/images/Greate dane/Greate dane (1).jpeg"
-                class="card-img-top"
-                alt="Great Dane"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Great Dane</h5>
-              </div>
-            </div>
-          </div>
-          <!-- St. Bernard -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="10"
-            >
-              <img
-                src="./assets/images/St Bernad dog/St Bernad dog (2).jpeg"
-                class="card-img-top"
-                alt="St. Bernard"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">St. Bernard</h5>
-              </div>
-            </div>
-          </div>
-          <!-- Doberman -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="11"
-            >
-              <img
-                src="./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.28.01 AM (1).jpeg"
-                class="card-img-top"
-                alt="Doberman"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Doberman</h5>
-                <p class="card-text">3 months</p>
-              </div>
-            </div>
-          </div>
-          <!-- French Bulldog -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="12"
-            >
-              <img
-                src="./assets/images/French Bulldog/bulldog (2).jpeg"
-                class="card-img-top"
-                alt="French Bulldog"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">French Bulldog</h5>
-                <p class="card-text">2 months</p>
-              </div>
-            </div>
-          </div>
-          <!-- Maltese -->
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div
-              class="card dog-card"
-              data-bs-toggle="modal"
-              data-bs-target="#dogModal"
-              data-dog="13"
-            >
-              <img
-                src="./assets/images/Maltese/Maltese (3).jpeg"
-                class="card-img-top"
-                alt="Maltese"
-              />
-              <div class="card-body text-center">
-                <h5 class="card-title">Maltese</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Happy Clients Section -->
-    <section class="py-5" style="background-color: #f7fff7">
-      <div class="container">
-        <h2 class="section-title">Happy Clients</h2>
-        <p class="text-center mb-5">
-          Our clients love their new furry friends!
-        </p>
-        <div class="row">
-          <!-- Client 1 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (1).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Basvraj"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Basvraj</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "Our German Shepherd is not just a pet, but a loyal family
-                  member. Thanks to PuppyAdda for a seamless experience!"
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 2 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (2).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Rohit Kamble"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Rohit Kamble</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "Our Shih Tzu has brought so much joy to our home. PuppyAdda
-                  is trustworthy and professional!"
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 3 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (3).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Rohan Singh"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Rohan Singh</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "We adopted a Doberman and couldn’t be happier. The PuppyAdda
-                  team was incredibly helpful."
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 4 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (4).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Vikram Patil"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Vikram Patil</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "Our second Doberman from PuppyAdda! Friendly, alert, and
-                  simply adorable. Thank you!"
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 5 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (5).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Shankar Rajput"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Shankar Rajput</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "Adopting our black Labrador was the best decision. The
-                  support from PuppyAdda was exceptional!"
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 6 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (6).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Shreya Mehta"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Shreya Mehta</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "Our Shih Tzu is the cutest! PuppyAdda made the whole
-                  experience delightful and safe."
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 7 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (7).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Zayed Khan"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Zayed Khan</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "My Shih Tzu has become my best friend. Thank you PuppyAdda
-                  for such a beautiful puppy!"
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 8 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (8).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Sant Veer Swami"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Sant Veer Swami</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "PuppyAdda helped us find the most loving poodle pup for our
-                  family. Totally recommended!"
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 9 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (9).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Min Ji"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Min Ji</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "Such a smooth and joyful experience adopting from PuppyAdda.
-                  I love my Shih Tzu pup!"
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 10 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/client (10).jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Nandita Roy"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Nandita Roy</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "Adopted a lovely golden retriever pup from PuppyAdda. Their
-                  service is truly heartwarming!"
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Client 11 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/Harshal.jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Harshal"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Harshal</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "Our Beagle pup is super playful and adorable. Thank you
-                  PuppyAdda for making this moment unforgettable!"
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client 12 -->
-          <div class="col-md-4 mb-4">
-            <div class="card h-100 shadow-sm text-center">
-              <img
-                src="./assets/images/Customers/rahul.jpg"
-                class="card-img-top rounded-circle mx-auto mt-4"
-                alt="Rahul"
-                style="width: 120px; height: 120px; object-fit: cover"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Rahul</h5>
-                <div class="star-rating" data-rating="5"></div>
-                <p class="card-text">
-                  "Welcoming a Beagle into our family was the best choice!
-                  PuppyAdda gave us a smooth and happy experience."
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Client 13 -->
-<div class="col-md-4 mb-4">
-  <div class="card h-100 shadow-sm text-center">
-    <img
-      src="./assets/images/Customers/Manvendra kolhe.jpg"
-      class="card-img-top rounded-circle mx-auto mt-4"
-      alt="Happy Beagle Owners"
-      style="width: 120px; height: 120px; object-fit: cover"
-    />
-    <div class="card-body">
-      <h5 class="card-title">Manvendra Kolhe</h5>
-      <div class="star-rating" data-rating="5"></div>
-      <p class="card-text">
-        "Adopting this adorable Beagle pup from PuppyAdda was an unforgettable moment. Thank you for the smooth and joyful process!"
-      </p>
-    </div>
-  </div>
-</div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h3>PuppyAdda - Pet Paradise</h3>
-            <p>
-              Bringing joy to families through pet adoption and care since 2020.
-            </p>
-            <div class="social-icons mt-3">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="https://wa.me/919975921236"
-                ><i class="fab fa-whatsapp"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <h5>Quick Links</h5>
-            <ul class="list-unstyled">
-              <li><a href="#">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5>Services</h5>
-            <ul class="list-unstyled">
-              <li><a href="services.html">Dog Adoption</a></li>
-              <li><a href="services.html">Grooming</a></li>
-              <li><a href="services.html">Pet Food</a></li>
-              <li><a href="services.html">Training</a></li>
-            </ul>
-          </div>
-        </div>
-        <hr class="mt-4 bg-light" />
-        <div class="text-center">
-          <p class="mb-0">
-            © 2025 PuppyAdda - Pet Paradise. All rights reserved.
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <!-- Dog Modal -->
-    <div class="modal fade" id="dogModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="dogModalTitle">Dog Details</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-md-6">
-                <img
-                  id="dogModalImage"
-                  src=""
-                  class="img-fluid rounded"
-                  alt="Dog Image"
-                  style="height: 300px; object-fit: cover; width: 100%"
-                />
-                <div class="row mt-3">
-                  <div class="col-4">
-                    <img
-                      id="dogImage1"
-                      src=""
-                      class="img-thumbnail dog-thumbnail"
-                      style="
-                        height: 80px;
-                        width: 100%;
-                        object-fit: cover;
-                        cursor: pointer;
-                      "
-                    />
-                  </div>
-                  <div class="col-4">
-                    <img
-                      id="dogImage2"
-                      src=""
-                      class="img-thumbnail dog-thumbnail"
-                      style="
-                        height: 80px;
-                        width: 100%;
-                        object-fit: cover;
-                        cursor: pointer;
-                      "
-                    />
-                  </div>
-                  <div class="col-4">
-                    <img
-                      id="dogImage3"
-                      src=""
-                      class="img-thumbnail dog-thumbnail"
-                      style="
-                        height: 80px;
-                        width: 100%;
-                        object-fit: cover;
-                        cursor: pointer;
-                      "
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <h3 id="dogBreed"></h3>
-                <p>
-                  <strong>Breed:</strong> <span id="dogBreedDisplay"></span>
-                </p>
-                <p><strong>Age:</strong> <span id="dogAge"></span></p>
-                <p><strong>Gender:</strong> <span id="dogGender"></span></p>
-                <p><strong>Size:</strong> <span id="dogSize"></span></p>
-                <p>
-                  <strong>Vaccinated:</strong> <span id="dogVaccinated"></span>
-                </p>
-                <p><strong>Video Link:</strong> <span id="videoLink"></span></p>
-                <div id="videoContainer">
-                  <div class="ratio ratio-16x9">
-                    <iframe id="dogVideo" src="" allowfullscreen></iframe>
-                  </div>
-                </div>
-                <div class="mt-3">
-                  <h5>About This Breed</h5>
-                  <p id="dogDescription"></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button id="whatsappBtn" class="btn whatsapp-btn">
-              <i class="fab fa-whatsapp me-2"></i> Adopt Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Popup -->
-    <div class="popup-overlay" id="popupOverlay">
-      <div class="popup-content animate__animated animate__bounceIn">
-        <span class="close-popup" id="closePopup">×</span>
-        <h3>Interested in Adopting a Pet?</h3>
-        <p>
-          Call us now or send a message on WhatsApp to know more about our
-          adorable puppies!
-        </p>
-        <div class="d-flex justify-content-center mt-4">
-          <a href="tel:+919975921236" class="btn btn-primary me-3"
-            ><i class="fas fa-phone me-2"></i> Call Now</a
-          >
-          <a href="https://wa.me/919975921236" class="btn whatsapp-btn">
-            <i class="fab fa-whatsapp me-2"></i> WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <!-- WhatsApp Floating Button -->
-    <div class="whatsapp-fixed animate__animated animate__fadeInUp">
-        <a href="https://wa.me/919975921236" title="Chat with us on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="whatsapp-tooltip">Chat with us!</span>
-        </a>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Dog data
-      const dogs = {
-        14: {
-          name: "Lily",
-          breed: "Chihuahua",
-          age: "3 months",
-          gender: "Both Male and Female",
-          size: "Small (5-8 inches, 3-6 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/PQT6qvEaI8w",
-          description:
-            "Tiny but confident. Alert, lively, and affectionate with family. Requires gentle handling and socialization. Ideal for apartment living and loving owners.",
-          images: [
-            "./assets/images/chihuwa/img1.jpg",
-            "./assets/images/chihuwa/img2.jpg",
-            "./assets/images/chihuwa/img4.jpg",
-          ],
-        },
-        1: {
-          name: "Shah Rukh",
-          breed: "Labrador Retriever",
-          age: "3 months",
-          gender: "Male",
-          size: "Large (22-24 inches, 55-80 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/LgFf7Gwsl1w",
-          description:
-            "Friendly, charismatic, and great with families. Loves swimming and fetch. Highly trainable with a gentle temperament that wins everyone's heart.",
-          images: [
-            "./assets/images/Labdour.jpg",
-            "./assets/images/Labrador.jpg",
-            "./assets/images/Labrador/Labrador (1).jpeg",
-          ],
-        },
-        2: {
-          name: "Deepika",
-          breed: "German Shepherd",
-          age: "4 months",
-          gender: "Female",
-          size: "Large (24-26 inches, 50-90 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/Kp56PQgQJOU",
-          description:
-            "Graceful yet powerful. Extremely intelligent and loyal. Excellent guard dog that needs mental stimulation and consistent training. Perfect for active owners.",
-          images: [
-            "./assets/images/German Sephard.jpg",
-            "./assets/images/German Shepard/German Shepard (2).jpeg",
-            "./assets/images/German Shepard/German Shepard (3).jpeg",
-          ],
-        },
-        3: {
-          name: "Alia",
-          breed: "Pomeranian",
-          age: "2 months",
-          gender: "Female",
-          size: "Small (6-7 inches, 3-7 lbs when grown)",
-          vaccinated: "First round completed",
-          description:
-            "Small package with big personality! Lively and affectionate. Perfect for apartments but needs regular grooming. Loves being the center of attention.",
-          images: [
-            "./assets/images/Pomeranin Puppy.jpg",
-            "./assets/images/PomeranianPuppies/Pomeranian (2).jpeg",
-            "./assets/images/PomeranianPuppies/Pomeranian (3).jpeg",
-          ],
-        },
-        4: {
-          name: "Priyanka",
-          breed: "Siberian Husky",
-          age: "3 months",
-          gender: "Both Male and Female",
-          size: "Medium-Large (20-24 inches, 35-60 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/uoeGRhKaHkI",
-          description:
-            "Stunning beauty with striking blue eyes. High energy and vocal - needs ample exercise. Independent spirit but affectionate. Secure fencing is a must!",
-          images: [
-            "./assets/images/Husky/Husky (2).jpeg",
-            "./assets/images/Husky/Husky (1).jpeg",
-            "./assets/images/Husky/Husky (3).jpeg",
-          ],
-        },
-        5: {
-          name: "Anushka",
-          breed: "Shih Tzu",
-          age: "2.5 months",
-          gender: "Both Male and Female",
-          size: "Small (9-10 inches, 9-16 lbs when grown)",
-          vaccinated: "First round completed",
-          videoLink: "https://www.youtube.com/embed/XCWckt3Qof8",
-          description:
-            "Elegant and sweet-natured companion. Thrives in calm environments and loves cuddles. Long luxurious coat requires daily brushing - perfect for those who love pampering their pets.",
-          images: [
-            "./assets/images/Shihtzu/shihtzu (3).png",
-            "./assets/images/Shihtzu/shihtzu (1).png",
-            "./assets/images/Shihtzu/shihtzu (2).png",
-          ],
-        },
-        6: {
-          name: "Kareena",
-          breed: "Toy Poodle",
-          age: "3 months",
-          gender: "Female",
-          size: "Small (under 10 inches, 4-6 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/6-numBcXC6Q",
-          description:
-            "Intelligent, elegant, and full of attitude. Hypoallergenic coat that needs professional grooming. Surprisingly athletic despite petite size.",
-          images: [
-            "./assets/images/Toy Poodle/ToyPoodle (1).jpg",
-            "./assets/images/Toy Poodle/ToyPoodle (2).jpg",
-            "./assets/images/Toy Poodle/ToyPoodle (3).jpg",
-          ],
-        },
-        7: {
-          name: "Ranveer",
-          breed: "Golden Retriever",
-          age: "2 months",
-          gender: "Both Male and Female",
-          size: "Large (21-24 inches, 55-75 lbs when grown)",
-          vaccinated: "First round completed",
-          videoLink: "https://www.youtube.com/embed/_RlPz867ybY",
-          description:
-            "Energetic, goofy, and full of love. Excellent family dog that gets along with everyone. Loves playing fetch and swimming. That golden coat will turn heads!",
-          images: [
-            "./assets/images/Golden retriever/Golden retriever (4).jpeg",
-            "./assets/images/Golden retriever/Golden retriever (2).jpeg",
-            "./assets/images/Golden retriever/Golden retriever (3).jpeg",
-          ],
-        },
-        8: {
-          name: "Salman",
-          breed: "Rottweiler",
-          age: "3 months",
-          gender: "Male",
-          size: "Large (24-27 inches, 95-130 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/eW25kV_js4w",
-          description:
-            "Powerful presence with a heart of gold. Needs strong leadership and socialization. Surprisingly gentle with family. Protective nature makes an excellent guard dog.",
-          images: [
-            "./assets/images/Rottweiler dog/dog-4372036_1280.jpg",
-            "./assets/images/Rottweiler dog/dog-6945696_1280.jpg",
-            "./assets/images/Rottweiler dog/Rottweiler dog (1).jpeg",
-          ],
-        },
-        9: {
-          name: "Hrithik",
-          breed: "Great Dane",
-          age: "4 months",
-          gender: "Male",
-          size: "Giant (28-34 inches, 110-175 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/4KN5sYd7wts",
-          description:
-            "Tall, handsome, and graceful despite massive size. Gentle giant who thinks he's a lap dog. Needs space to stretch those long legs!",
-          images: [
-            "./assets/images/Greate dane/Greate dane (1).jpeg",
-            "./assets/images/Greate dane/Greate dane (2).jpeg",
-            "./assets/images/Greate dane/Greate dane (3).jpeg",
-          ],
-        },
-        10: {
-          name: "Amitabh",
-          breed: "St. Bernard",
-          age: "5 months",
-          gender: "Both Male and Female",
-          size: "Giant (28-30 inches, 140-180 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/-Nkhw4gMWL8",
-          description:
-            "Calm, patient, and noble. Famous rescue dog with incredible strength. That deep bark commands respect! Drools more than he acts though.",
-          images: [
-            "./assets/images/St Bernad dog/St Bernad dog (2).jpeg",
-            "./assets/images/St Bernad dog/St Bernad dog (1).jpeg",
-            "./assets/images/St Bernad dog/St Bernad dog (2).jpeg",
-          ],
-        },
-        11: {
-          name: "Brad",
-          breed: "Doberman",
-          age: "3 months",
-          gender: "Male",
-          size: "Large (26-28 inches, 75-100 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/4KN5sYd7wts",
-          description:
-            "Sleek, athletic, and intensely loyal. Fierce protector with family but sweetheart at home. Needs vigorous exercise and mental challenges. That sleek coat is low maintenance!",
-          images: [
-            "./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.28.01 AM (1).jpeg",
-            "./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.28.01 AM.jpeg",
-            "./assets/images/Doberman/WhatsApp Image 2025-06-05 at 10.27.56 AM.jpeg",
-          ],
-        },
-        12: {
-          name: "Angelina",
-          breed: "French Bulldog",
-          age: "2 months",
-          gender: "Both Male and Female",
-          size: "Small (11-13 inches, 16-28 lbs when grown)",
-          vaccinated: "First round completed",
-          description:
-            "Charming, bat-eared beauty with a big personality. Adapts well to city living. Not much of a barker but snorts and snores adorably. Those big eyes will melt your heart!",
-          images: [
-            "./assets/images/French Bulldog/bulldog (2).jpeg",
-            "./assets/images/French Bulldog/bulldog (1).jpeg",
-            "./assets/images/French Bulldog/bulldog (3).jpeg",
-          ],
-        },
-        13: {
-          name: "Katrina",
-          breed: "Maltese",
-          age: "3 months",
-          gender: "Both Male and Female",
-          size: "Small (8-10 inches, 4-7 lbs when grown)",
-          vaccinated: "Yes",
-          videoLink: "https://www.youtube.com/embed/64RQh3Hxt5o",
-          description:
-            "Petite glamour girl with a silky white coat. Loves being pampered and carried around. Surprisingly playful and affectionate. Hypoallergenic and perfect for apartments.",
-          images: [
-            "./assets/images/Maltese/Maltese (3).jpeg",
-            "./assets/images/Maltese/Maltese (1).jpeg",
-            "./assets/images/Maltese/Maltese (2).jpeg",
-          ],
-        },
-      };
-
-      // Initialize dog modal
-      const dogModal = document.getElementById("dogModal");
-      if (dogModal) {
-        dogModal.addEventListener("show.bs.modal", function (event) {
-          const button = event.relatedTarget;
-          const dogId = button.getAttribute("data-dog");
-          const dog = dogs[dogId];
-
-          document.getElementById("dogModalTitle").textContent = dog.breed;
-          document.getElementById("dogBreed").textContent = dog.breed;
-          document.getElementById("dogBreedDisplay").textContent = dog.breed;
-          document.getElementById("dogAge").textContent = dog.age;
-          document.getElementById("dogGender").textContent = dog.gender;
-          document.getElementById("dogSize").textContent = dog.size;
-          document.getElementById("dogVaccinated").textContent = dog.vaccinated;
-          document.getElementById("dogDescription").textContent =
-            dog.description;
-
-          // Handle video link
-          const videoLinkElement = document.getElementById("videoLink");
-          const videoContainer = document.getElementById("videoContainer");
-          const videoIframe = document.getElementById("dogVideo");
-
-          if (dog.videoLink) {
-            videoLinkElement.innerHTML = `<a href="#" class="play-video-link" data-video="${dog.videoLink}">Watch Video</a>`;
-          } else {
-            videoLinkElement.textContent = "No video available";
-          }
-
-          // Reset video container
-          videoContainer.style.display = "none";
-          videoIframe.src = "";
-
-          const mainImage = document.getElementById("dogModalImage");
-          mainImage.src = dog.images[0];
-
-          document.getElementById("dogImage1").src = dog.images[0];
-          document.getElementById("dogImage2").src = dog.images[1] || "";
-          document.getElementById("dogImage3").src = dog.images[2] || "";
-
-          const whatsappBtn = document.getElementById("whatsappBtn");
-          const message = `Hi PuppyAdda, I'm interested in adopting a ${dog.breed}. Can you please share more details?`;
-          const encodedMessage = encodeURIComponent(message);
-          whatsappBtn.onclick = function () {
-            const whatsappUrl = `https://wa.me/919975921236?text=${encodedMessage}`;
-            try {
-              window.open(whatsappUrl, "_blank");
-            } catch (e) {
-              alert(
-                `Unable to open WhatsApp. Please contact us at +919975921236 to adopt this ${dog.breed}.`
-              );
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                padding: 30px 20px;
             }
-          };
-        });
-      }
 
-      // Change main image when thumbnail is clicked
-      document.querySelectorAll(".dog-thumbnail").forEach((thumbnail) => {
-        thumbnail.addEventListener("click", function () {
-          document.getElementById("dogModalImage").src = this.src;
-        });
-      });
+            h1 {
+                font-size: 24px;
+            }
 
-      // Handle video link click
-      document.addEventListener("click", function (e) {
-        if (e.target.classList.contains("play-video-link")) {
-          e.preventDefault();
-          const videoUrl = e.target.getAttribute("data-video");
-          const videoContainer = document.getElementById("videoContainer");
-          const videoIframe = document.getElementById("dogVideo");
+            .heart-broken {
+                font-size: 60px;
+            }
 
-          videoIframe.src = videoUrl;
-          videoContainer.style.display = "block";
+            .message-box p {
+                font-size: 15px;
+            }
 
-          // Scroll to the video
-          videoContainer.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-          });
+            .qr-placeholder {
+                width: 180px;
+                height: 180px;
+                font-size: 14px;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 16px;
+            }
         }
-      });
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart-broken">💔</div>
+        <h1>Service Temporarily Suspended</h1>
+        <div class="subtitle">A Message from Your Dedicated Developer</div>
+        
+        <div class="tears">💧</div><div class="tears">💧</div><div class="tears">💧</div>
 
-      // Star rating display
-      document.querySelectorAll(".star-rating").forEach((ratingElement) => {
-        const rating = parseInt(ratingElement.getAttribute("data-rating"));
-        let stars = "";
-        for (let i = 1; i <= 5; i++) {
-          stars += `<i class="fas fa-star ${
-            i <= rating ? "" : "fa-regular"
-          }"></i>`;
+        <div class="message-box">
+            <p>Dear Valued Client,</p>
+            <p>It breaks my heart to write this message. I have poured countless hours, sleepless nights, and genuine passion into crafting your website. Every line of code was written with care, every design element was thoughtfully placed, and every bug was meticulously fixed - all for your success.</p>
+            
+            <div class="work-details">
+                <h3 style="color: #2c3e50; margin-bottom: 15px;">🛠️ Work Completed for You:</h3>
+                <ul class="work-list">
+                    <li>Fixed critical logic errors and improved functionality</li>
+                    <li>Enhanced visual styles and user experience</li>
+                    <li>Resolved deployment issues and server configuration</li>
+                    <li>Optimized performance and loading speeds</li>
+                    <li>Ensured mobile responsiveness across devices</li>
+                    <li>Implemented security measures and best practices</li>
+                </ul>
+            </div>
+
+            <p>Despite charging you a <span class="highlight">very minimal price</span> - far below market rates - and accommodating multiple revision requests with patience and dedication, the payment remains pending.</p>
+            
+            <p>With a heavy heart, I had to make the difficult decision to temporarily suspend all pages until payment is received. This decision wasn't made lightly, and I truly hope we can resolve this soon.</p>
+        </div>
+
+        <div class="payment-section">
+            <h2 style="margin-bottom: 20px;">💳 Complete Payment to Resume Services</h2>
+            
+            <div class="qr-placeholder">
+               <img src="./me/phonePay.jpg" alt="">
+            </div>
+            
+            <div class="payment-info">
+                <strong>Scan QR code above to pay via PhonePe</strong><br>
+                <small>Secure • Instant • Trusted</small>
+            </div>
+
+            <button class="cta-button" onclick="showPaymentMessage()">
+                I Want to Pay Now 💝
+            </button>
+        </div>
+
+        <div class="footer">
+            <p>Once payment is received, all services will be restored immediately.<br>
+            Thank you for your understanding and continued trust.</p>
+            <br>
+            <p><strong>- Your Committed Developer</strong> 🙏</p>
+        </div>
+    </div>
+
+    <script>
+        function showPaymentMessage() {
+            alert("Thank you for choosing to complete the payment! 🙏\n\nPlease scan the QR code above with PhonePe.\n\nOnce payment is confirmed, all your website services will be restored within minutes.\n\nFor any assistance, please contact me directly.");
         }
-        ratingElement.innerHTML = stars;
-      });
 
-      // Popup functionality
-      function showPopup() {
-        document.getElementById("popupOverlay").style.display = "flex";
-      }
-
-      // Show popup initially after 10 seconds
-      setTimeout(showPopup, 60000);
-
-      // Show popup every 10 seconds after closing
-      let popupInterval;
-      function startPopupInterval() {
-        popupInterval = setInterval(showPopup, 60000);
-      }
-
-      // Close popup and restart interval
-      document
-        .getElementById("closePopup")
-        .addEventListener("click", function () {
-          document.getElementById("popupOverlay").style.display = "none";
-          clearInterval(popupInterval);
-          startPopupInterval();
+        // Add floating animation to tears
+        document.addEventListener('DOMContentLoaded', function() {
+            const tears = document.querySelectorAll('.tears');
+            tears.forEach((tear, index) => {
+                tear.style.animationDelay = `${index * 0.5}s`;
+            });
         });
 
-      // Start the interval initially
-      startPopupInterval();
+        // Add subtle entrance animation for message box
+        setTimeout(() => {
+            const messageBox = document.querySelector('.message-box');
+            messageBox.style.animation = 'slideInFromLeft 0.8s ease-out';
+        }, 500);
 
-      // Smooth scrolling for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-      // WhatsApp button hover effects
-      const whatsappBtn = document.querySelector('.whatsapp-fixed a');
-      
-      whatsappBtn.addEventListener('mouseenter', () => {
-          whatsappBtn.style.transform = 'scale(1.1)';
-      });
-      
-      whatsappBtn.addEventListener('mouseleave', () => {
-          whatsappBtn.style.transform = 'scale(1)';
-      });
-      
-      // Hide WhatsApp button when printing
-      window.matchMedia('print').addListener((mql) => {
-          const whatsapp = document.querySelector('.whatsapp-fixed');
-          if (mql.matches) {
-              whatsapp.style.display = 'none';
-          } else {
-              whatsapp.style.display = 'block';
-          }
-      });
+        // CSS for slide animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInFromLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
     </script>
-  </body>
+</body>
 </html>

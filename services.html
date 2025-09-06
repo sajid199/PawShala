@@ -3,663 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PuppyAdda - Pet Paradise Services</title>
-    <link rel="icon" type="image/x-icon" href="./assets/images/Logo/pupy_adda_logo-removebg-preview2.ico">
-    <!-- Google Fonts for Cursive Tagline -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Service Suspended - Payment Required</title>
     <style>
-        :root {
-            --primary-color: #ff6b6b;
-            --secondary-color: #4ecdc4;
-            --dark-color: #292f36;
-            --light-color: #f7fff7;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
-            background-color: var(--light-color);
-        }
-
-        .navbar {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            color: var(--primary-color) !important;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--primary-color);
-        }
-
-        .logo {
-            width: 50px;
-            height: auto;
-            margin-right: 10px;
-        }
-
-        .tagline {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: var(--dark-color);
-            margin-left: 5px;
-            letter-spacing: 1px;
-        }
-
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&auto=format&fit=crop&w=2098&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 120px 0;
-            text-align: center;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 10px 20px;
-            font-size: 1.1rem;
-        }
-
-        .btn-primary:hover {
-            background-color: #ff5252;
-            border-color: #ff5252;
-        }
-
-        .section-title {
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 40px;
-            position: relative;
-            text-align: center;
-        }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .carousel-item img {
-            height: 600px;
-            object-fit: cover;
-        }
-
-        .carousel-caption {
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            padding: 15px;
-        }
-
-        .service-img {
-            height: 350px;
-            object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
             justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            display: none;
+            padding: 20px;
         }
 
-        .popup-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             max-width: 500px;
-            width: 90%;
-            position: relative;
-        }
-
-        .close-popup {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: var(--dark-color);
-        }
-
-        .whatsapp-btn {
-            background-color: #25D366;
-            color: white;
-            border: none;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-            color: white;
-        }
-
-        /* WhatsApp Floating Button Styles */
-        .whatsapp-fixed {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-fixed a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            background-color: #25D366;
-            color: white;
-            border-radius: 50%;
-            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
-            transition: all 0.3s ease;
-            font-size: 2rem;
-            text-decoration: none;
-            position: relative;
-        }
-
-        .whatsapp-fixed a:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
-        }
-
-        .whatsapp-tooltip {
-            position: absolute;
-            right: 70px;
-            white-space: nowrap;
-            background: white;
-            color: #075E54;
-            padding: 8px 15px;
-            border-radius: 25px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-fixed a:hover .whatsapp-tooltip {
-            opacity: 1;
-            right: 75px;
-        }
-
-        /* Pulse animation */
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
-
-        .whatsapp-fixed a::after {
-            content: '';
-            position: absolute;
             width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            border-radius: 50%;
+            padding: 40px 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart-broken {
+            font-size: 80px;
+            color: #e74c3c;
+            margin-bottom: 20px;
             animation: pulse 2s infinite;
         }
 
-        footer {
-            background-color: var(--dark-color);
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 16px;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .message-box {
+            background: #f8f9fa;
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 10px;
+            text-align: left;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .message-box p {
+            color: #2c3e50;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #ffeaa7 0%, #fab1a0 100%);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+
+        .work-details {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #74b9ff;
+        }
+
+        .work-list {
+            text-align: left;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .work-list li {
+            margin: 8px 0;
+            list-style: none;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .work-list li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+            color: #f39c12;
+        }
+
+        .payment-section {
+            background: linear-gradient(135deg, #6c5ce7, #a29bfe);
             color: white;
-            padding: 40px 0;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(108, 92, 231, 0.4);
         }
 
-        footer a {
-            color: var(--light-color);
-            text-decoration: none;
-            transition: color 0.3s;
+        .qr-placeholder {
+            width: 200px;
+            height: 200px;
+            background: white;
+            border: 3px dashed #6c5ce7;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c5ce7;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.4;
         }
 
-        footer a:hover {
-            color: var(--primary-color);
+        .payment-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
         }
 
-        footer .social-icons a {
-            font-size: 1.5rem;
-            margin: 0 10px;
+        .cta-button {
+            background: linear-gradient(135deg, #00b894, #00cec9);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.2rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-
-            .carousel-item img {
-                height: 300px;
-            }
-
-            .service-img {
-                height: 250px;
-            }
-
-            footer .col-md-4 {
-                margin-bottom: 30px;
-            }
-
-            .navbar-brand {
-                display: flex;
-                align-items: center;
-                flex-wrap: nowrap;
-            }
-
-            .navbar-brand .logo {
-                width: 40px;
-                margin-right: 8px;
-            }
-
-            .tagline {
-                font-size: 1rem;
-                margin-left: 5px;
-            }
-
-            .whatsapp-fixed {
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .whatsapp-fixed a {
-                width: 50px;
-                height: 50px;
-                font-size: 1.8rem;
-            }
-            
-            .whatsapp-tooltip {
-                display: none;
-            }
-            
-            .whatsapp-fixed a::after {
-                animation: pulse-mobile 2s infinite;
-            }
-            
-            @keyframes pulse-mobile {
-                0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-                70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
-                100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-            }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 184, 148, 0.4);
         }
 
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 1.8rem;
+        .footer {
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .tears {
+            font-size: 24px;
+            color: #74b9ff;
+            margin: 10px 5px;
+            animation: fall 3s infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10px); opacity: 1; }
+            100% { transform: translateY(20px); opacity: 0; }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 480px) {
+            .container {
+                margin: 10px;
+                padding: 30px 20px;
             }
 
-            .hero-subtitle {
-                font-size: 1rem;
+            h1 {
+                font-size: 24px;
             }
 
-            .carousel-caption h5 {
-                font-size: 1rem;
+            .heart-broken {
+                font-size: 60px;
             }
 
-            .carousel-caption p {
-                font-size: 0.8rem;
+            .message-box p {
+                font-size: 15px;
             }
 
-            .service-img {
-                height: 200px;
+            .qr-placeholder {
+                width: 180px;
+                height: 180px;
+                font-size: 14px;
             }
 
-            .navbar-brand {
-                display: flex;
-                align-items: center;
-                flex-wrap: nowrap;
-            }
-
-            .navbar-brand .logo {
-                width: 35px;
-                margin-right: 5px;
-            }
-
-            .tagline {
-                font-size: 0.9rem;
-                margin-left: 3px;
-            }
-
-            .whatsapp-fixed a {
-                width: 45px;
-                height: 45px;
-                font-size: 1.5rem;
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 16px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img class="logo" src="./assets/images/Logo/pupy_adda_logo.png" alt="PuppyAdda Logo">
-                PuppyAdda <span class="tagline">Pet Paradise</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="gallery.html">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+    <div class="container">
+        <div class="heart-broken">💔</div>
+        <h1>Service Temporarily Suspended</h1>
+        <div class="subtitle">A Message from Your Dedicated Developer</div>
+        
+        <div class="tears">💧</div><div class="tears">💧</div><div class="tears">💧</div>
+
+        <div class="message-box">
+            <p>Dear Valued Client,</p>
+            <p>It breaks my heart to write this message. I have poured countless hours, sleepless nights, and genuine passion into crafting your website. Every line of code was written with care, every design element was thoughtfully placed, and every bug was meticulously fixed - all for your success.</p>
+            
+            <div class="work-details">
+                <h3 style="color: #2c3e50; margin-bottom: 15px;">🛠️ Work Completed for You:</h3>
+                <ul class="work-list">
+                    <li>Fixed critical logic errors and improved functionality</li>
+                    <li>Enhanced visual styles and user experience</li>
+                    <li>Resolved deployment issues and server configuration</li>
+                    <li>Optimized performance and loading speeds</li>
+                    <li>Ensured mobile responsiveness across devices</li>
+                    <li>Implemented security measures and best practices</li>
                 </ul>
             </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section with Carousel -->
-    <section class="hero-section">
-        <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2"></button>
+            <p>Despite charging you a <span class="highlight">very minimal price</span> - far below market rates - and accommodating multiple revision requests with patience and dedication, the payment remains pending.</p>
+            
+            <p>With a heavy heart, I had to make the difficult decision to temporarily suspend all pages until payment is received. This decision wasn't made lightly, and I truly hope we can resolve this soon.</p>
+        </div>
+
+        <div class="payment-section">
+            <h2 style="margin-bottom: 20px;">💳 Complete Payment to Resume Services</h2>
+            
+            <div class="qr-container">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAAOhCAYAAAA9fQRdAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAACAASURBVHic7N3Pz6TJfejxqgGJIxALcMoIsOy2EEJcKy9skEVb9kUOkkfwWMJOkdh5BKNJLDwCZ+axJrg9gkdg+xFYloQ10rT/gOFeOYZrQHKnvZDdEpJPWxQwEoP1QnPJhYqMyMjIjO93ft5Xdfn9PJk50/9erO8Xz1dmPPHE+x//8R//+v/8P//Pry6fPj196tSpDz/88OHvuezLvu7rvu7rvu7rvu77/7+vy7989OjRs+fn5y9fvnz+7OfPfvbbJy8/f/bm6+9/vTDLsizLsizLsizL+o/72t/z7y+/+rO/ffvuxdv3f/zuz77+/+2+8b+fPX12fHxyfHz8+Nq1a08ePfr3//7f/9n/DywgIcBJtD/+4z/+9eXTp09PlUrdr9TdCnLKcvOx/bXO15+99aT+r+fPnp2fn7948fLFy5cvXlz+r/tvv/32d9/9/tvvf/vhw4cP77X/7wgAAK7D0P0nP/nJS5fBVHKfSuktZf7hhx/e/u53//b3v//7//zii//++eeff/3b3/72d2/evHn7ne9859tvv/32u9/5v3//u9/97vfffv+733/333//+6sv/pd/+2//7b/99qvP//av//qvvvzi8//2139949VXX33+5z/+8c9+/OMf/+iHP/zhD3/4wx/+8Ic//OEPf/jDH/7whz/84Q9/+MMf/vCHP/zhD3/4wx/+8Ic//OEPf/jDH/7whz/84Q9/+MMf/vCHP/zhD3/4w/8B+v/xH//xL5588sn/+N3vfvf/+OUvf/mfXnzxxf/99OnTJ8+fP3/+4sWLF5f/6/bl9uXm8n/9vfy/fl4+/eOFgBAAIMXV8f5f//qv/9v19fXTZ8+enZ+fHx8fP66XUP/9/b9cPnl2wJvPT00vBJzk3/zJn/z637z84qv/9ve//+K3b968/Yv/8dWXv/v2tw9++9vf/s5FPAAAAPj/3l4A+OOPfvSj//p3v/3t777++msXAF64CAAAAOCqt59/fH19/fzZ2dnZhx9+eO+DCwEu/wPu1h9//PHvfvOb3/zmxz/+8f/2yy+++P/95y+++P/84x//+Fff/s7FAJcBAI7dP//zP//q8vN//+7Fi+fPLy+Pn56enp6dPTs7Ozs+Pn58p//7P//zP3/xi1/84uXLly9fvnz58svPP//8t69evfr222+//fbb3/3+999+++2333777e+//+13v//+999///z8/HxI4T/84Q9/+MMfv+r/Fxwff/nt73//7be/++677393+f8L/l+8fv361evXr1+9fr168fLFy5cvXr548eLFixcvXrx48eLt58+fP39+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn7+/Pz8/Pz89PT09PT09PQP3/a/evjw4cOHDx8+fPjw4YcPf3Tz/+YdcPZ2fnFxcXFxcdFeALh8BH/vhYBff/31P/v1r3/9zx49+ttHjx793MWAF5cvP//8t7/55pvfvHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2b/2vzL//yL7+6du1//a//63/9r37+85//+6dPn/7ts2fPzs4+/LCJlUcr1o8//vgfXl9fP3/27Ozs7MOLt2I0NoCRy3ff3ZdX/3tLz+OLi8PrP//++++//f7777/79ttve0vPf3/37t0///53v/u3b9++/eF/+B++9+1333379ttf/frVqy+//PLL//pv/uS//OU3v/mXf/bqqyu/K6/61f+ueNvGPv7tVLGNVxqt7lL+K7G59L/8yz/77sKr9b+W+M9/ePfu3Y8+vnn77g9/6NtvvfvFzv9vfve/9e/9r7/+9fe//vf/8Ht/6f+vP/zNT376S5e/df7N0t/4v9U9ff78w8rj4+vj4+Pj49PT09PT09PT09PT04v/+3/N+v0/n//hs8/ez8/Pz98VdIv74/q8+vjhw4cPHz78gTiNfLfqQsDv//a3v/399b/74ssvv/zyD6OmR6f4P5XSX71+++Ht+++//+H7KT/8BQAAd3RGfvjhhw8fPnz44cOHjx8/fvTo0aNHjx49evTo0aNHjx49evTo0aNHjx49evTo0aNHjx49+oMCIJ7AAIDHA5vj4+Pji4tHF5ePHl38r8cn/7f9Hz7z/gv/33w/d7n85YVXvmxYfPm5f/LFF6+fvjm93r9+//jbPzp49+7du3fv3r179+7d2//IfbfPP//861yABBdAAAADAGDyQqz80aNHDy9efFz++8/84r/bqPvxq+5S/r/1rQ8//PDDf/Mn//fW5b8oJ6//W3/zt1d/+k//rr84iL4AAAAAABwOBQAAAALf+fmjRw8fPnz44ODg4ODg4ODgYE9h2vsA8AcnY2ff3vn28zMvP339tefPnj178uTJkyd5X/9ZPff8w6cf/vzNJ59/9t1Onz/0//53P8z8u9f9v/5v/qsv/v7xz3v0/4P/43vf9Pfiv8tfWnz+vvX/9PJPS2evv/vm7bevv/32m9+8effuu+++//777rvvvfn2228ut3+B5ErnLhUfbcVb5z3vx+feuyu9u9J7d6X37krvdx/8Sf7PtBW3rbf+1r3/+efXr1/97X/9b/79zV9+9JH/u3/P/+3/7f/29b9/+fKLFz/5yU9+5jP/Z/4PK2f+5+fn5+/+j//D9/5P36/7f/w8e/v2289/8uPHf/CDH/xgr//fv/uxzwcAAABYMPDhw4fn5+enp6enp6enp6enp6enp6f7yrv/5k//7F6J6d9999133333Xe/d9d5dbf1VPhP9Dfz3fdqvtLL9j7/Lfzd9l8+Ef9f7d71313t3vXdXene1d1dbf5V313vXvs2//dNbRvvVz6z/3ffff+9b8d/9vnuvfRfN233nd7X/+1L3/8PfK6//7vvvv/vuu++++8Mn4L/97W9/++233/728n/9w79rffX6n776p9cvX375Tf7/LPRdfm7+4F3+lS7/KH8s8Nq3v2//O/e11197PkOzf2TzB5//1nfff6/9u7+F/3tPfF/+zYL8/8Bw5btI+dfqGdz/Ke/f+//F/Cf8hGGf8f8BZb3z+sPzY9Nj8+PT09PTm0+B/1vfv/v2+7//h7/5n3/ykz/97W/+8rffvfj+t7/9s9/9m+/8/jv+u+++++7Z3/zu9//l3/3J5V/d+6//zffefffdd//uf/+9737fu+++9//nX7/3//6fvvfdd/+1/7v97/z/93t/9773rj8/tT3yf/nD7733fe+977333g/e9/rDbvrPfUP86s2bP3z7XbSP5D/8A6H/t+/r/79J4fF/8P8Dzv9wJT+9jz/8gzev//br3/+bP/yzP/v673//39aX/+77779vPyv/7f/W+/v/Jz+8+fNKAKP5U/CefG/5+/i/57/y/5qRf/d/jvn/C6b8e9PvP2l96P9/5T9+/Ouvj5/kx09/+vr+qb/7/n/+3b/5b7/53/1P7v/PP/zbv/i7X/xPv/zFL/7bL3/5y//7Fy9//eKb37+9kP/rv//b/fv//u/z6xrqE/4f//RP7+gff3n9v7xftX91u/8//Kd/+uHdd9997/vfe9/73vdrv3r39tu3b9+++fZbLxt4+3b/7rWevXnzx/ff+7/R/75/F/7rf/2v3/Wff/t7799/77Vv337z7W++/ua77787+A59l7/F/3Vy/SJ/VfLfxHv//fd/+MOHf7g//x9++P5K7/7hfxnw/5D737373b//7/e3pff5/7/F63tvB9/+8Cc//fd/77/n8p/4v83fKvz/Z/5f3/+/P//29z/88MMf//Zbbz959fGPP/mx99777z+8fe+997333vf+4O/1l3+3zxf4t/+7f/fffvjhh3/z5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2bN2/evHnz5s2
+            
+            <div class="payment-info">
+                <strong>Scan QR code above to pay via PhonePe</strong><br>
+                <small>Secure • Instant • Trusted</small>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?ixlib=rb-4.0.3&auto=format&fit=crop&w=1035&q=80" class="d-block w-100" alt="Pet Grooming">
-                    <div class="carousel-caption d-block">
-                        <h1 class="hero-title animate__animated animate__fadeInDown">Premium Pet <span class="text-warning">Grooming Services</span></h1>
-                        <p class="hero-subtitle animate__animated animate__fadeInUp">Pamper your pets with our top-notch grooming care</p>
-                        <a href="#grooming-services" class="btn btn-primary animate__animated animate__pulse">Explore Services</a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&auto=format&fit=crop&w=988&q=80" class="d-block w-100" alt="Pet Grooming">
-                    <div class="carousel-caption d-block">
-                        <h1 class="hero-title animate__animated animate__fadeInDown">Premium Pet <span class="text-warning">Grooming Services</span></h1>
-                        <p class="hero-subtitle animate__animated animate__fadeInUp">Pamper your pets with our top-notch grooming care</p>
-                        <a href="#grooming-services" class="btn btn-primary animate__animated animate__pulse">Explore Services</a>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1594149929911-78975a43d4f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" class="d-block w-100" alt="Pet Grooming">
-                    <div class="carousel-caption d-block">
-                        <h1 class="hero-title animate__animated animate__fadeInDown">Premium Pet <span class="text-warning">Grooming Services</span></h1>
-                        <p class="hero-subtitle animate__animated animate__fadeInUp">Pamper your pets with our top-notch grooming care</p>
-                        <a href="#grooming-services" class="btn btn-primary animate__animated animate__pulse">Explore Services</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
+
+            <button class="cta-button" onclick="showPaymentMessage()">
+                I Want to Pay Now 💝
             </button>
         </div>
-    </section>
 
-    <!-- Grooming Services Section -->
-    <section id="grooming-services" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-title">Our Grooming Services</h2>
-            <p class="text-center mb-5">Discover our range of professional pet grooming services designed to keep your pets looking and feeling their best!</p>
-
-            <!-- Service 1: Full Grooming Package -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6 order-md-1">
-                    <img src="./assets/images/Random/Full-Grooming.jpg" alt="Full Grooming Package" class="img-fluid service-img animate__animated animate__fadeInLeft">
-                </div>
-                <div class="col-md-6 order-md-2">
-                    <h3 class="mt-3 mt-md-0">Full Grooming Package</h3>
-                    <p>Our comprehensive grooming package includes a bath, haircut, nail trimming, ear cleaning, and teeth brushing. Perfect for a complete makeover to keep your pet fresh and stylish.</p>
-                    <p><strong>Duration:</strong> 1.5-2 hours<br><strong>Price:</strong> Starts at ₹250<br><strong>Suitable for:</strong> All breeds</p>
-                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20Full%20Grooming%20Package" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
-                </div>
-            </div>
-
-            <!-- Service 2: Bath and Brush -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6 order-md-2">
-                    <img src="./assets/images/Random/bath-brush.jpg" alt="Bath and Brush" class="img-fluid service-img animate__animated animate__fadeInRight">
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <h3 class="mt-3 mt-md-0">Bath and Brush</h3>
-                    <p>A refreshing bath with premium pet-safe shampoo followed by a thorough brushing to remove loose fur and prevent matting. Leaves your pet's coat shiny and smooth.</p>
-                    <p><strong>Duration:</strong> 45 minutes<br><strong>Price:</strong> Starts at ₹200<br><strong>Suitable for:</strong> Short and long-haired breeds</p>
-                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20Bath%20and%20Brush%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
-                </div>
-            </div>
-
-            <!-- Service 3: Nail Trimming -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6 order-md-1">
-                    <img src="./assets/images/Random/nail-clipping-6926855_1280.jpg" alt="Nail Trimming" class="img-fluid service-img animate__animated animate__fadeInLeft">
-                </div>
-                <div class="col-md-6 order-md-2">
-                    <h3 class="mt-3 mt-md-0">Nail Trimming</h3>
-                    <p>Safe and gentle nail trimming to keep your pet's paws healthy and comfortable. Our groomers ensure a stress-free experience for your pet.</p>
-                    <p><strong>Duration:</strong> 15-20 minutes<br><strong>Price:</strong> Starts at ₹100<br><strong>Suitable for:</strong> All pets</p>
-                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20Nail%20Trimming%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
-                </div>
-            </div>
-
-            <!-- Service 4: Ear Cleaning -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6 order-md-2">
-                    <img src="./assets/images/Random/EarClearningDog.jpg" alt="Ear Cleaning" class="img-fluid service-img animate__animated animate__fadeInRight">
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <h3 class="mt-3 mt-md-0">Ear Cleaning</h3>
-                    <p>Gentle cleaning to remove dirt and wax buildup from your pet's ears, reducing the risk of infections and ensuring their comfort.</p>
-                    <p><strong>Duration:</strong> 15 minutes<br><strong>Price:</strong> Starts at ₹80<br><strong>Suitable for:</strong> All pets, especially floppy-eared breeds</p>
-                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20Ear%20Cleaning%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
-                </div>
-            </div>
-
-            <!-- Service 5: Teeth Brushing -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6 order-md-1">
-                    <img src="./assets/images/Random/teeth brushing.jpg" alt="Teeth Brushing" class="img-fluid service-img animate__animated animate__fadeInLeft">
-                </div>
-                <div class="col-md-6 order-md-2">
-                    <h3 class="mt-3 mt-md-0">Teeth Brushing</h3>
-                    <p>Keep your pet's dental health in check with our professional teeth brushing service, using pet-safe toothpaste to freshen breath and reduce plaque.</p>
-                    <p><strong>Duration:</strong> 15 minutes<br><strong>Price:</strong> Starts at ₹90<br><strong>Suitable for:</strong> All pets</p>
-                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20Teeth%20Brushing%20service" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
-                </div>
-            </div>
-
-            <!-- Service 6: De-Shedding Treatment -->
-            <div class="row align-items-center mb-5">
-                <div class="col-md-6 order-md-2">
-                    <img src="./assets/images/Random/Desheding.jpg" alt="De-Shedding Treatment" class="img-fluid service-img animate__animated animate__fadeInRight">
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <h3 class="mt-3 mt-md-0">De-Shedding Treatment</h3>
-                    <p>Specialized brushing and grooming techniques to reduce shedding and keep your home fur-free. Ideal for breeds with heavy undercoats.</p>
-                    <p><strong>Duration:</strong> 1 hour<br><strong>Price:</strong> Starts at ₹220<br><strong>Suitable for:</strong> Breeds with thick coats</p>
-                    <a href="https://wa.me/919975921236?text=I'm%20interested%20in%20the%20De-Shedding%20Treatment" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> Book Now</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>PuppyAdda - Pet Paradise</h3>
-                    <p>Bringing joy to families through pet adoption and care since 2020.</p>
-                    <div class="social-icons mt-3">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/919975921236"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Services</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="services.html">Dog Adoption</a></li>
-                        <li><a href="services.html">Grooming</a></li>
-                        <li><a href="services.html">Pet Food</a></li>
-                        <li><a href="services.html">Training</a></li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="mt-4 bg-light">
-            <div class="text-center">
-                <p class="mb-0">© 2025 PuppyAdda - Pet Paradise. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Popup -->
-    <div class="popup-overlay" id="popupOverlay">
-        <div class="popup-content animate__animated animate__bounceIn">
-            <span class="close-popup" id="closePopup">×</span>
-            <h3>Interested in Our Grooming Services?</h3>
-            <p>Call us now or send a message on WhatsApp to book a grooming session for your pet!</p>
-            <div class="d-flex justify-content-center mt-4">
-                <a href="tel:+919975921236" class="btn btn-primary me-3"><i class="fas fa-phone me-2"></i> Call Now</a>
-                <a href="https://wa.me/919975921236" class="btn whatsapp-btn"><i class="fab fa-whatsapp me-2"></i> WhatsApp</a>
-            </div>
+        <div class="footer">
+            <p>Once payment is received, all services will be restored immediately.<br>
+            Thank you for your understanding and continued trust.</p>
+            <br>
+            <p><strong>- Your Committed Developer</strong> 🙏</p>
         </div>
     </div>
 
-    <!-- WhatsApp Floating Button -->
-    <div class="whatsapp-fixed animate__animated animate__fadeInUp">
-        <a href="https://wa.me/919975921236" title="Chat with us on WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span class="whatsapp-tooltip">Chat with us!</span>
-        </a>
-    </div>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Popup functionality
-        function showPopup() {
-            document.getElementById('popupOverlay').style.display = 'flex';
+        function showPaymentMessage() {
+            alert("Thank you for choosing to complete the payment! 🙏\n\nPlease scan the QR code above with PhonePe.\n\nOnce payment is confirmed, all your website services will be restored within minutes.\n\nFor any assistance, please contact me directly.");
         }
 
-        // Show popup initially after 10 seconds
-        setTimeout(showPopup, 10000);
-
-        // Show popup every 10 seconds after closing
-        let popupInterval;
-        function startPopupInterval() {
-            popupInterval = setInterval(showPopup, 10000);
-        }
-
-        // Close popup and restart interval
-        document.getElementById('closePopup').addEventListener('click', function() {
-            document.getElementById('popupOverlay').style.display = 'none';
-            clearInterval(popupInterval);
-            startPopupInterval();
-        });
-
-        // Start the interval initially
-        startPopupInterval();
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Add floating animation to tears
+        document.addEventListener('DOMContentLoaded', function() {
+            const tears = document.querySelectorAll('.tears');
+            tears.forEach((tear, index) => {
+                tear.style.animationDelay = `${index * 0.5}s`;
             });
         });
 
-        // WhatsApp button hover effects
-        const whatsappBtn = document.querySelector('.whatsapp-fixed a');
-        
-        whatsappBtn.addEventListener('mouseenter', () => {
-            whatsappBtn.style.transform = 'scale(1.1)';
-        });
-        
-        whatsappBtn.addEventListener('mouseleave', () => {
-            whatsappBtn.style.transform = 'scale(1)';
-        });
-        
-        // Hide WhatsApp button when printing
-        window.matchMedia('print').addListener((mql) => {
-            const whatsapp = document.querySelector('.whatsapp-fixed');
-            if (mql.matches) {
-                whatsapp.style.display = 'none';
-            } else {
-                whatsapp.style.display = 'block';
+        // Add subtle entrance animation for message box
+        setTimeout(() => {
+            const messageBox = document.querySelector('.message-box');
+            messageBox.style.animation = 'slideInFromLeft 0.8s ease-out';
+        }, 500);
+
+        // CSS for slide animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInFromLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
             }
-        });
+        `;
+        document.head.appendChild(style);
     </script>
 </body>
 </html>
